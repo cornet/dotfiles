@@ -17,6 +17,7 @@ setopt short_loops
 setopt auto_resume notify
 
 # ZLE Bindings
+bindkey -v
 bindkey '' beginning-of-line
 bindkey '' end-of-line
 bindkey '' history-incremental-search-backward
