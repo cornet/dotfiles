@@ -5,6 +5,7 @@
 export HISTSIZE=5000
 export SAVEHIST=5000
 export HISTFILE=~/.zsh_history
+export HISTORY_IGNORE="clear && exec '/usr/local/bin/csshX' *"
 setopt inc_append_history share_history
 
 # Globbing Options
@@ -17,7 +18,7 @@ setopt short_loops
 setopt auto_resume notify
 
 # ZLE Bindings
-bindkey -v
+bindkey -e
 bindkey '' beginning-of-line
 bindkey '' end-of-line
 bindkey '' history-incremental-search-backward
@@ -34,10 +35,18 @@ GREEN="%{"$'\033[01;32m'"%}"
 RED="%{"$'\033[01;31m'"%}"
 YELLOW="%{"$'\033[01;33m'"%}"
 BLUE="%{"$'\033[01;34m'"%}"
+MAGENTA="%{"$'\033[01;35m'"%}"
 BOLD="%{"$'\033[01;39m'"%}"
 NORM="%{"$'\033[00m'"%}"
 
-export PS1="${GREEN}%n@%m${BLUE} %~ $ ${NORM}"
+export PS1="${GREEN}>> ${BLUE}%(5~|%-1~/…/%3~|%4~)\$vcs_info_msg_0_ $ ${NORM}"
+
+# Load VCS info
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+zstyle ':vcs_info:git:*' formats " ${YELLOW}%b${NORM}"
 
 # Say what we are doing in terminal window title
 case $TERM in
@@ -46,15 +55,18 @@ case $TERM in
 	;;
 esac
 
+autoload -Uz compinit && compinit
+zmodload -i zsh/complist
+
+# Base16 Shell colours
+BASE16_SHELL=$HOME/.config/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
 ###############################################################################
 # Aliases
 ###############################################################################
 # Colour :)
-alias d="ls --color"
-alias ls="ls --color=auto"
-alias ll="ls --color -l"
-alias grep="grep --color=auto"
+alias ls="ls -G"
 
 # Anti-Screwup
 alias cp="cp -i"
@@ -64,7 +76,26 @@ alias rm="rm -i"
 # Calculator
 alias c='noglob perl -e '\''$_="@ARGV";s/\^/**/g;y/x/*/;print eval $_, "\n"'\'''
 
+# Vim with ruby support
+alias vim="NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim"
+alias vi="NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim"
+
 ###############################################################################
 # Exports
 ###############################################################################
-export EDITOR="vim"
+export EDITOR="nvim"
+
+export PATH="~/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+export MANPATH=/usr/local/share/man:$MANPATH
+
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
+
+chruby ruby-2.5.1
+
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:/Users/nathan/node_modules/.bin:/usr/local/opt/percona-server56/bin
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source ~/.fzf.zshrc
