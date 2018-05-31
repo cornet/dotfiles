@@ -10,13 +10,15 @@ Prefix : `Ctrl+a`
 
 Vi-style copy mode:
 
-|         |                           |
-| ------- | ------------------------- |
-| `v` | Begin selection               |
-| `V` | Select line                   |
-| `r` | Toggle rectangle selection    |
-| `y` | Copy to system clipboards     |
-| `Y` | Copy then paste paste to pane |
+|         |                               |
+| ---     | ----------------------------- |
+| `C-a [` | Enter copy mode               |
+| `q`     | Exit copy mode                |
+| `v`     | Begin selection               |
+| `V`     | Select line                   |
+| `r`     | Toggle rectangle selection    |
+| `y`     | Copy to system clipboards     |
+| `Y`     | Copy then paste paste to pane |
 
 Other copy-paste:
 
