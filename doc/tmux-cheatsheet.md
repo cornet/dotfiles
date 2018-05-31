@@ -1,6 +1,6 @@
 # Tmux Cheatsheet
 
-* Prefix : `Ctrl+a`
+Prefix : `Ctrl+a`
 
 |         |                               |
 | ------- | ----------------------------- |
