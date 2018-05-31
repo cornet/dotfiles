@@ -28,12 +28,12 @@ Other copy-paste:
 
 Pane splitting:
 
-|         |                                    |
-| ------- | ---------------------------------- |
-| `C-a -` | Split pane horizontally            |
-| `C-a |` | Split pane vertically              |
-| `C-a \` | Split pane vertically full height  |
-| `C-a _` | Split pane horizontally full width |
+|          |                                    |
+| -------  | ---------------------------------- |
+| `C-a -`  | Split pane horizontally            |
+| `C-a \|` | Split pane vertically              |
+| `C-a \`  | Split pane vertically full height  |
+| `C-a _`  | Split pane horizontally full width |
 
 Pane navigation (works seamlessly with vim windows):
 
@@ -63,14 +63,14 @@ Windows
 
 Session management:
 
-|           |                                                         |
-| --------- | ------------------------------------------------------- |
-| `C-a C`   | Create new session prompting for name                   |
-| `C-a X`   | Kill current session and attach to previous session     |
-| `C-a S`   | Switch to last session                                  |
-| `C-a !`   | Promote window to new session                           |
-| `C-a @`   | Promote pane to new session                             |
-| `C-a m`   | Mark pane                                               |
-| `C-a t -` | Join marked pane horizontally to current session/window |
-| `C-a t |` | Join marked pane vertically to current session/window   |
-| `C-a t f` | Join marked pane full screen to current session/window  |
+|            |                                                         |
+| ---------  | ------------------------------------------------------- |
+| `C-a C`    | Create new session prompting for name                   |
+| `C-a X`    | Kill current session and attach to previous session     |
+| `C-a S`    | Switch to last session                                  |
+| `C-a !`    | Promote window to new session                           |
+| `C-a @`    | Promote pane to new session                             |
+| `C-a m`    | Mark pane                                               |
+| `C-a t -`  | Join marked pane horizontally to current session/window |
+| `C-a t \|` | Join marked pane vertically to current session/window   |
+| `C-a t f`  | Join marked pane full screen to current session/window  |
