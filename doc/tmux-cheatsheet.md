@@ -34,6 +34,7 @@ Pane splitting:
 | `C-a \|` | Split pane vertically              |
 | `C-a \`  | Split pane vertically full height  |
 | `C-a _`  | Split pane horizontally full width |
+| `C-a \`  | Toggle pane zoom                   |
 
 Pane navigation (works seamlessly with vim windows):
 
