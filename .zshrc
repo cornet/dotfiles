@@ -66,7 +66,7 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 # Aliases
 ###############################################################################
 # Colour :)
-alias ls="ls -G"
+alias ls="ls --color=auto"
 
 # Anti-Screwup
 alias cp="cp -i"
@@ -85,17 +85,16 @@ alias vi="NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim"
 ###############################################################################
 export EDITOR="nvim"
 
-export PATH="~/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="~/bin:/usr/local/bin:/usr/local/sbin:$PATH:/home/nathan/go/bin:/home/nathan/bin"
+export PATH=$PATH:/usr/local/go/bin
+
 export MANPATH=/usr/local/share/man:$MANPATH
 
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
 
-chruby ruby-2.5.1
-
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:/Users/nathan/node_modules/.bin:/usr/local/opt/percona-server56/bin
+chruby ruby-2.5.3
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source ~/.fzf.zshrc
+unset GOROOT
