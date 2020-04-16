@@ -66,8 +66,11 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 ###############################################################################
 # Aliases
 ###############################################################################
-# Colour :)
-alias ls="ls -G"
+if [[ "$OSTYPE" = darwin* ]]; then
+  alias ls="ls -G"
+else
+  alias ls="ls --color=auto"
+fi
 
 # Anti-Screwup
 alias cp="cp -i"
@@ -88,35 +91,34 @@ alias cat=bat
 ###############################################################################
 export EDITOR="nvim"
 
-export PATH="~/bin:/usr/local/bin:/usr/local/sbin:$PATH"
-export MANPATH=/usr/local/share/man:$MANPATH
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source ~/.fzf.zshrc
 
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
 
-chruby ruby-2.5.1
+chruby ruby-2.5.3
+
+export PATH="~/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:/Users/nathan/node_modules/.bin:/usr/local/opt/percona-server56/bin
-export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
-export PATH="/Users/nathan/bin:$PATH"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source ~/.fzf.zshrc
+export MANPATH=/usr/local/share/man:$MANPATH
 
-export SDC_URL=https://cloudapi.ovh.triton.fac.cloud
-export SDC_ACCOUNT=nathan
-export SDC_KEY_ID=7f:4c:98:bd:f1:7b:89:14:63:5a:4d:9d:23:af:6f:50
+if [[ "$OSTYPE" = darwin* ]]; then
+  alias dk="chruby-exec 2.7.0 -- devkit"
 
+  eval "$(direnv hook zsh)"
 
-alias dk="chruby-exec 2.7.0 -- devkit"
+  export AWS_ASSUME_ROLE_TTL=1h
 
-eval "$(direnv hook zsh)"
-export PATH="/usr/local/opt/libxml2/bin:$PATH"
+  export PATH=$PATH:/Users/nathan/node_modules/.bin:/usr/local/opt/percona-server56/bin
+  export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
+  export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+  export PATH="/usr/local/opt/libxml2/bin:$PATH"
 
-export AWS_ASSUME_ROLE_TTL=1h
-
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-
-export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
+  export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
+else
+  export PATH=$PATH:/usr/local/go/bin
+fi
