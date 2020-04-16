@@ -55,6 +55,7 @@ case $TERM in
 	;;
 esac
 
+fpath=($HOME/.zsh/completions $fpath)
 autoload -Uz compinit && compinit
 zmodload -i zsh/complist
 
@@ -66,7 +67,7 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 # Aliases
 ###############################################################################
 # Colour :)
-alias ls="ls --color=auto"
+alias ls="ls -G"
 
 # Anti-Screwup
 alias cp="cp -i"
@@ -80,21 +81,42 @@ alias c='noglob perl -e '\''$_="@ARGV";s/\^/**/g;y/x/*/;print eval $_, "\n"'\'''
 alias vim="NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim"
 alias vi="NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim"
 
+alias cat=bat
+
 ###############################################################################
 # Exports
 ###############################################################################
 export EDITOR="nvim"
 
-export PATH="~/bin:/usr/local/bin:/usr/local/sbin:$PATH:/home/nathan/go/bin:/home/nathan/bin"
-export PATH=$PATH:/usr/local/go/bin
-
+export PATH="~/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 export MANPATH=/usr/local/share/man:$MANPATH
 
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
 
-chruby ruby-2.5.3
+chruby ruby-2.5.1
+
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:/Users/nathan/node_modules/.bin:/usr/local/opt/percona-server56/bin
+export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
+export PATH="/Users/nathan/bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source ~/.fzf.zshrc
-unset GOROOT
+
+export SDC_URL=https://cloudapi.ovh.triton.fac.cloud
+export SDC_ACCOUNT=nathan
+export SDC_KEY_ID=7f:4c:98:bd:f1:7b:89:14:63:5a:4d:9d:23:af:6f:50
+
+
+alias dk="chruby-exec 2.7.0 -- devkit"
+
+eval "$(direnv hook zsh)"
+export PATH="/usr/local/opt/libxml2/bin:$PATH"
+
+export AWS_ASSUME_ROLE_TTL=1h
+
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
+export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
