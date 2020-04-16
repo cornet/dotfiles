@@ -28,6 +28,9 @@ if [ "$(uname -s)" == "Linux" ]; then
 
     mkdir -p ~/bin/
     ln -sf ~/Apps/nvim.appimage ~/bin/nvim
+
+    # Python bindings
+    pip3 install pynvim
   fi
 
   # Install gopass
