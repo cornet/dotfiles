@@ -99,7 +99,7 @@ source /usr/local/share/chruby/auto.sh
 
 chruby ruby-2.5.3
 
-export PATH="~/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin

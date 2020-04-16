@@ -16,6 +16,7 @@ if [ "$(uname -s)" == "Linux" ]; then
   install_pkg gnupg
   install_pkg rng-tools
   install_pkg stow
+  install_pkg python3-pip
 
   # Install neovim
   if [ ! -f ~/Apps/nvim.appimage ]; then
