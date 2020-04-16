@@ -16,6 +16,17 @@ if [ "$(uname -s)" == "Linux" ]; then
   install_pkg gnupg
   install_pkg rng-tools
 
+  # Install neovim
+  if [ ! -f ~/Apps/nvim.appimage ]; then
+    nvim_version=0.4.3
+
+    mkdir -p ~/Apps/
+    cd ~/Apps/ && wget https://github.com/neovim/neovim/releases/download/v${nvim_version}/nvim.appimage
+
+    mkdir -p ~/bin/
+    ln -sf ~/Apps/nvim.appimage ~/bin/nvim
+  fi
+
   # Install gopass
   if ! [ -x "$(command -v gopass)" ]; then
     wget -q -O- https://api.bintray.com/orgs/gopasspw/keys/gpg/public.key | sudo apt-key add -
