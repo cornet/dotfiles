@@ -15,6 +15,7 @@ if [ "$(uname -s)" == "Linux" ]; then
   install_pkg exuberant-ctags 
   install_pkg gnupg
   install_pkg rng-tools
+  install_pkg stow
 
   # Install neovim
   if [ ! -f ~/Apps/nvim.appimage ]; then
