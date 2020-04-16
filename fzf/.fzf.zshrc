@@ -88,6 +88,11 @@ gp() {
 	gopass -c "$pass"
 }
 
+# Search lastpass pass password manager
+lp() {
+  lpass show -c --password $(lpass ls  | fzf | awk '{print $(NF)}' | sed 's/\]//g')
+}
+
 export FZF_COMPLETION_TRIGGER=''
 bindkey '^T' fzf-completion
 bindkey '^I' $fzf_default_completion
