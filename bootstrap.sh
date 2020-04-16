@@ -23,6 +23,7 @@ if [ "$(uname -s)" == "Linux" ]; then
 
     mkdir -p ~/Apps/
     cd ~/Apps/ && wget https://github.com/neovim/neovim/releases/download/v${nvim_version}/nvim.appimage
+    chmod +x ~/Apps/nvim.appimage
 
     mkdir -p ~/bin/
     ln -sf ~/Apps/nvim.appimage ~/bin/nvim
