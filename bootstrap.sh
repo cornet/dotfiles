@@ -12,10 +12,14 @@ install_pkg() {
 if [ "$(uname -s)" == "Linux" ]; then
   install_pkg git
   install_pkg build-essential
-  install_pkg exuberant-ctags 
+
+  # gopass deps
   install_pkg gnupg
   install_pkg rng-tools
   install_pkg stow
+
+  # neovim deps
+  install_pkg exuberant-ctags 
   install_pkg python3-pip
 
   # Install neovim
