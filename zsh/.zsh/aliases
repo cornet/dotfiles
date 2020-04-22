@@ -1,0 +1,13 @@
+# vi: ft=zsh
+#
+# Anti Screw up
+alias cp="cp -i"
+alias mv="mv -i"
+alias rm="rm -i"
+
+if (( ${+commands[bat]} )); then
+  alias cat=bat
+fi
+
+# Calculator
+alias c='noglob perl -e '\''$_="@ARGV";s/\^/**/g;y/x/*/;print eval $_, "\n"'\'''

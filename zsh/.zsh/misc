@@ -1,0 +1,7 @@
+# vi: ft=zsh
+
+# Set timeout for aws-vault
+export AWS_ASSUME_ROLE_TTL=1h
+
+# Terraform plugin cache dir
+export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"

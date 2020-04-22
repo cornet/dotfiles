@@ -1,0 +1,9 @@
+# vi: ft=zsh
+
+if (( ${+commands[nvim]} )); then
+  export EDITOR=nvim
+  alias vi=nvim
+  alias vim=nvim
+elif (( ${+commands[vim]} )); then
+  export EDITOR=vim
+fi
