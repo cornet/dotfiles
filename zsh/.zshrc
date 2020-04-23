@@ -15,7 +15,7 @@ antibody bundle sindresorhus/pure
 
 # Handy functions
 is_osx() {
-  [[ "${OSTYPE}" = Darwin* ]]
+  [[ "${OSTYPE}" = darwin* ]]
 }
 
 cmd_exists() {
