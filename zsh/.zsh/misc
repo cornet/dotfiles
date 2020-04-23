@@ -1,5 +1,12 @@
 # vi: ft=zsh
 
+# Homebrew Paths
+
+export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+export PATH="/usr/local/opt/libxml2/bin:$PATH"
+export PATH=$PATH:~/node_modules/.bin
+
 # Set timeout for aws-vault
 export AWS_ASSUME_ROLE_TTL=1h
 

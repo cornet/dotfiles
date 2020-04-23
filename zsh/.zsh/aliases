@@ -5,9 +5,7 @@ alias cp="cp -i"
 alias mv="mv -i"
 alias rm="rm -i"
 
-if (( ${+commands[bat]} )); then
-  alias cat=bat
-fi
+cmd_exists bat && alias cat=bat
 
 # Calculator
 alias c='noglob perl -e '\''$_="@ARGV";s/\^/**/g;y/x/*/;print eval $_, "\n"'\'''
