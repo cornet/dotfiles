@@ -25,10 +25,6 @@ cmd_exists() {
 # Revert ls(1) to default system colours on OS X
 is_osx && unset LSCOLORS
 
-# Base16 Shell colours
-BASE16_SHELL=$HOME/.config/base16-shell/
-[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
-
 # Pure Prompt config
 PURE_GIT_PULL=0            # Disable auto git pull
 PURE_PROMPT_SYMBOL='>>'
