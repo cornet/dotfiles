@@ -1,14 +1,23 @@
 # vi: ft=zsh
 
-# Homebrew Paths
+# General Path
+export PATH=~/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
+# Homebrew Paths
 export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 export PATH="/usr/local/opt/libxml2/bin:$PATH"
 export PATH=$PATH:~/node_modules/.bin
+
+# Go Paths
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
 
 # Set timeout for aws-vault
 export AWS_ASSUME_ROLE_TTL=1h
 
 # Terraform plugin cache dir
 export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
+
+# Use Ruby 2.7 by default
+chruby 2.7
