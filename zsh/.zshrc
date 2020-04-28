@@ -34,3 +34,5 @@ zstyle :prompt:pure:prompt:success color green
 for file in ~/.zsh/*; do
   source "${file}"
 done
+
+PAGER=bat
