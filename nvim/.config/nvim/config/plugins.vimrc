@@ -85,7 +85,7 @@ let g:ackprg = 'rg --vimgrep'
 autocmd BufNewFile,BufRead *.hcl set ft=terraform
 autocmd BufNewFile,BufRead *.hcl set ts=2
 autocmd BufNewFile,BufRead *.hcl set expandtab
-let g:terraform_fmt_on_save = 0
+let g:terraform_fmt_on_save = 1
 
 " deoplete
 " let g:deoplete#enable_at_startup = 1
