@@ -87,8 +87,7 @@ autocmd BufNewFile,BufRead *.hcl set expandtab
 let g:terraform_fmt_on_save = 1
 
 " deoplete
-let g:deoplete#ignore_sources = {}
-let g:deoplete#ignore_sources._ = ['buffer', 'around']
+call deoplete#custom#option('ignore_sources', {'_': ['buffer','around']})
 
 let g:deoplete#omni_patterns = {}
 let g:deoplete#omni_patterns.terraform = '[^ *\t"{=$]\w*'
