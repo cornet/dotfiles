@@ -53,7 +53,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Terraform
 Plug 'hashivim/vim-terraform'
-" Plug 'juliosueiras/vim-terraform-completion'
+Plug 'juliosueiras/vim-terraform-completion'
 
 " tim-mux-navigator
 Plug 'christoomey/vim-tmux-navigator'

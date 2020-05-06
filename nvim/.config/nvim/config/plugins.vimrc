@@ -16,7 +16,6 @@ let g:neomake_puppet_enable_makers = ['puppet']
 " Change dir whenever root changes
 let NERDTreeChDirMode=2
 
-
 " vimwiki:
 " Set path to wiki
 let g:vimwiki_list = [{'path': '~/Documents/vimwiki', 'syntax': 'markdown', 'ext': '.md', 'nested_syntaxes': {'ruby': 'ruby'}}]
@@ -88,8 +87,13 @@ autocmd BufNewFile,BufRead *.hcl set expandtab
 let g:terraform_fmt_on_save = 1
 
 " deoplete
-" let g:deoplete#enable_at_startup = 1
-" call deoplete#initialize()
+let g:deoplete#ignore_sources = {}
+let g:deoplete#ignore_sources._ = ['buffer', 'around']
+
+let g:deoplete#omni_patterns = {}
+let g:deoplete#omni_patterns.terraform = '[^ *\t"{=$]\w*'
+let g:deoplete#enable_at_startup = 1
+call deoplete#initialize()
 
 " Disable gutentags for git commit/rebase files
 au FileType gitcommit,gitrebase let g:gutentags_enabled
