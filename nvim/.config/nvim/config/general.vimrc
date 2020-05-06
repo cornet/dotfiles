@@ -22,15 +22,19 @@ autocmd! bufwritepost nvimrc source ~/.config/nvim/init.vim
 set directory=~/.vimtmp
 set backupdir=~/.vimtmp
 
-" Always show tab line
-set stal=2
+" Always show file tabs line
+set showtabline=2
 
+" Enable wildmenu
 set wildmenu
+
+" Show col/row location in status bar
 set ruler
+
+" Disable all error notifications
 set noerrorbells
 set novisualbell
 set t_vb=
-set tags+=~/.vim/systags
 
 " Make backspace behave properly
 set backspace=eol,start,indent
@@ -45,5 +49,5 @@ au FileType ruby  setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 au FileType eruby setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 au FileType perl  setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 
-" Omnicomplete
+" Omnicomplete use longest match
 set completeopt=menu,preview,longest
