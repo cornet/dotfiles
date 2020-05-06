@@ -49,7 +49,12 @@ au FileType ruby  setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 au FileType eruby setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 au FileType perl  setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 
-" Omnicomplete use longest match
+" Omnicomplete
+"  - Always show menu even if single match
+"  - Show preview/info window if there is one
+"  - Don't select first option
+"    (Would prefer longest but it appears to have a bug which will
+"     delete already typed word when completing :( )
 set completeopt=menuone,preview,noselect
 
 " Hide Omnicomplete Info(Preview) window after completions
