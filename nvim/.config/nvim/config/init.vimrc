@@ -27,6 +27,7 @@ Plug 'xolox/vim-misc'
 Plug 'majutsushi/tagbar'
 Plug 'benekastah/neomake'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'mileszs/ack.vim'
 
 " Ruby/Puppet Plugins
 Plug 'vim-ruby/vim-ruby'
@@ -41,12 +42,7 @@ Plug 'fatih/vim-go'
 Plug 'wellbredgrapefruit/tomdoc.vim'
 
 " Colourschems
-Plug 'tomasr/molokai'
 Plug 'chriskempson/base16-vim'
-Plug 'mileszs/ack.vim'
-
-" Simplenote
-" Plug 'mrtazz/simplenote.vim'
 
 " deoplete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -55,7 +51,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'hashivim/vim-terraform'
 Plug 'juliosueiras/vim-terraform-completion'
 
-" tim-mux-navigator
+" vim-tmux-navigator
 Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()

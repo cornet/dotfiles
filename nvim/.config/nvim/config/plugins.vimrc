@@ -16,11 +16,13 @@ let g:neomake_puppet_enable_makers = ['puppet']
 " Change dir whenever root changes
 let NERDTreeChDirMode=2
 
+
 " vimwiki:
 " Set path to wiki
 let g:vimwiki_list = [{'path': '~/Documents/vimwiki', 'syntax': 'markdown', 'ext': '.md', 'nested_syntaxes': {'ruby': 'ruby'}}]
 let g:vimwiki_global_ext = 0
 let g:vimwiki_auto_chdir = 1
+
 
 " airline:
 " Always display airline with dark theme
@@ -57,9 +59,7 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 
-" easytags:
-let g:easytags_dynamic_files = 1
-let g:easytags_events = ['BufWritePost']
+" tagbar
 let g:tagbar_type_puppet = {
     \ 'ctagstype': 'puppet',
     \ 'kinds': [
@@ -77,14 +77,20 @@ if has('nvim')
 endif
 let g:fzf_command_prefix = 'Fzf'
 
+
 " ack:
 let g:ackprg = 'rg --vimgrep'
+
 
 " terraform
 autocmd BufNewFile,BufRead *.hcl set ft=terraform
 autocmd BufNewFile,BufRead *.hcl set ts=2
 autocmd BufNewFile,BufRead *.hcl set expandtab
 let g:terraform_fmt_on_save = 1
+
+" Disable validators
+let g:neomake_terraform_enabled_makers = []
+
 
 " deoplete
 call deoplete#custom#option('ignore_sources', {'_': ['buffer','around']})
@@ -94,8 +100,10 @@ let g:deoplete#omni_patterns.terraform = '[^ *\t"{=$]\w*'
 let g:deoplete#enable_at_startup = 1
 call deoplete#initialize()
 
+
 " Disable gutentags for git commit/rebase files
 au FileType gitcommit,gitrebase let g:gutentags_enabled
+
 
 " Place tags files in ~/.vimtmp
 let g:gutentags_cache_dir = '~/.vimtmp'
