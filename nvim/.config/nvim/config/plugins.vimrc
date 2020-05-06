@@ -87,11 +87,10 @@ autocmd BufNewFile,BufRead *.hcl set ft=terraform
 autocmd BufNewFile,BufRead *.hcl set ts=2
 autocmd BufNewFile,BufRead *.hcl set expandtab
 let g:terraform_fmt_on_save = 1
-
 " Disable validators
 let g:neomake_terraform_enabled_makers = []
 
-
+"
 " deoplete
 call deoplete#custom#option('ignore_sources', {'_': ['buffer','around']})
 
@@ -107,3 +106,5 @@ au FileType gitcommit,gitrebase let g:gutentags_enabled
 
 " Place tags files in ~/.vimtmp
 let g:gutentags_cache_dir = '~/.vimtmp'
+
+let g:SuperTabDefaultCompletionType = "<C-X><C-O>"

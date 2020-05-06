@@ -50,4 +50,8 @@ au FileType eruby setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 au FileType perl  setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 
 " Omnicomplete use longest match
-set completeopt=menu,preview,longest
+set completeopt=menuone,preview,noselect
+
+" Hide Omnicomplete Info(Preview) window after completions
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
