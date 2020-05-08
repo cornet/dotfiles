@@ -28,7 +28,6 @@ Plug 'majutsushi/tagbar'
 Plug 'benekastah/neomake'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'mileszs/ack.vim'
-Plug 'ervandew/supertab'
 
 " Ruby/Puppet Plugins
 Plug 'vim-ruby/vim-ruby'

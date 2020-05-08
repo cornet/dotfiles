@@ -90,21 +90,23 @@ let g:terraform_fmt_on_save = 1
 " Disable validators
 let g:neomake_terraform_enabled_makers = []
 
-"
+
 " deoplete
 call deoplete#custom#option('ignore_sources', {'_': ['buffer','around']})
 
 let g:deoplete#omni_patterns = {}
-let g:deoplete#omni_patterns.terraform = '[^ *\t"{=$]\w*'
+call deoplete#custom#option('omni_patterns', {
+\ 'terraform': '[^ *\t"{=$]\w*',
+\})
+
 let g:deoplete#enable_at_startup = 1
 call deoplete#initialize()
 
-
+"
 " Disable gutentags for git commit/rebase files
 au FileType gitcommit,gitrebase let g:gutentags_enabled
 
-
 " Place tags files in ~/.vimtmp
-let g:gutentags_cache_dir = '~/.vimtmp'
+let g:gutentags_cache_dir = expand('~/.vimtmp/')
 
 let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
