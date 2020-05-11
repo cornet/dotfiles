@@ -60,3 +60,7 @@ set completeopt=menuone,preview,noselect
 " Hide Omnicomplete Info(Preview) window after completions
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
+" Hide buffers instead closing
+" (Required for LanguageClient-neovim)
+set hidden
