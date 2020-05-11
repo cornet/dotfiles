@@ -29,6 +29,11 @@ Plug 'benekastah/neomake'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'mileszs/ack.vim'
 
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
 " Ruby/Puppet Plugins
 Plug 'vim-ruby/vim-ruby'
 Plug 'kana/vim-textobj-user'
@@ -49,7 +54,14 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Terraform
 Plug 'hashivim/vim-terraform'
-Plug 'juliosueiras/vim-terraform-completion'
+" This isn't really a plugin just a collection of snipmate snippets.
+" Ultisnip will load snipmate snippets only if they are in a directory
+" called 'snippets' of a plugin.
+Plug 'juliosueiras/vim-terraform-snippets', {
+      \ 'dir': '~/.config/nvim/plugged/vim-terraform-snippets/snippets',
+      \ 'on': [],
+      \ }
+Plug '~/.config/nvim/plugged/vim-terraform-snippets'
 
 " vim-tmux-navigator
 Plug 'christoomey/vim-tmux-navigator'
