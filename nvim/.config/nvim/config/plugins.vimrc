@@ -82,13 +82,15 @@ let g:fzf_command_prefix = 'Fzf'
 let g:ackprg = 'rg --vimgrep'
 
 
-" terraform
-autocmd BufNewFile,BufRead *.hcl set ft=terraform
+" Highlight .hcl files as if they were terraform
+autocmd BufNewFile,BufRead *.hcl set ft=hcl
+autocmd BufNewFile,BufRead *.hcl set syntax=terraform
 autocmd BufNewFile,BufRead *.hcl set ts=2
 autocmd BufNewFile,BufRead *.hcl set expandtab
+
+
+" Auto format terraform files
 let g:terraform_fmt_on_save = 1
-" Disable validators
-let g:neomake_terraform_enabled_makers = []
 
 
 " deoplete
