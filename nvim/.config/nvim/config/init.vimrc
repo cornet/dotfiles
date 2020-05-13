@@ -58,6 +58,7 @@ Plug 'hashivim/vim-terraform'
 " Ultisnip will load snipmate snippets only if they are in a directory
 " called 'snippets' of a plugin.
 Plug 'juliosueiras/vim-terraform-snippets', {
+      \ 'as': 'vim-terraform-snippets-dummy-plugin',
       \ 'dir': '~/.config/nvim/plugged/vim-terraform-snippets/snippets',
       \ 'on': [],
       \ }
