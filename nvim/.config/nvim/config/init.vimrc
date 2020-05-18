@@ -64,6 +64,9 @@ Plug 'juliosueiras/vim-terraform-snippets', {
       \ }
 Plug '~/.config/nvim/plugged/vim-terraform-snippets'
 
+" my-vim-snippets
+Plug 'cornet/my-vim-snippets'
+
 " vim-tmux-navigator
 Plug 'christoomey/vim-tmux-navigator'
 
