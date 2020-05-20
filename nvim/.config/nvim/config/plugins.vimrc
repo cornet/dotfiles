@@ -25,7 +25,7 @@ let g:vimwiki_list = [{
       \ 'path': '~/Documents/vimwiki',
       \ 'syntax': 'markdown',
       \ 'ext': '.md',
-      \ 'nested_syntaxes': {'ruby': 'ruby'},
+      \ 'nested_syntaxes': {'ruby': 'ruby', 'bash': 'sh', 'terraform': 'terraform', 'json': 'json'},
       \ 'auto_tags': 1,
       \ 'auto_toc': 1
       \ }]
@@ -35,6 +35,8 @@ let g:vimwiki_global_ext = 0
 let g:vimwiki_auto_chdir = 1
 " Add header title when creating page
 let g:vimwiki_auto_header = 1
+" Alternate header colours
+let g:vimwiki_hl_headers = 1
 
 
 "" airline:
