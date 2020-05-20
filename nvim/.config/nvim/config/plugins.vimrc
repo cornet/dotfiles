@@ -1,4 +1,4 @@
-" neomake:
+"" neomake:
 " Auto-run Neomake on save
 autocmd! bufwritepost * Neomake
 
@@ -12,19 +12,32 @@ let g:neomake_puppet_puppet_maker = {
 let g:neomake_puppet_enable_makers = ['puppet']
 
 
-" nerdtree:
+"" nerdtree:
 " Change dir whenever root changes
 let NERDTreeChDirMode=2
 
 
-" vimwiki:
+"" vimwiki:
 " Set path to wiki
-let g:vimwiki_list = [{'path': '~/Documents/vimwiki', 'syntax': 'markdown', 'ext': '.md', 'nested_syntaxes': {'ruby': 'ruby'}, 'auto_tags': 1}]
+" auto_tags: update tags file on save
+" auto_toc: rebuild table of contents on save
+let g:vimwiki_list = [{
+      \ 'path': '~/Documents/vimwiki',
+      \ 'syntax': 'markdown',
+      \ 'ext': '.md',
+      \ 'nested_syntaxes': {'ruby': 'ruby'},
+      \ 'auto_tags': 1,
+      \ 'auto_toc': 1
+      \ }]
+" Don't associate all .md files with vimwiki
 let g:vimwiki_global_ext = 0
+" Change to current wiki dir
 let g:vimwiki_auto_chdir = 1
+" Add header title when creating page
+let g:vimwiki_auto_header = 1
 
 
-" airline:
+"" airline:
 " Always display airline with dark theme
 set laststatus=2
 let g:airline_theme='base16_chalk'
@@ -47,19 +60,19 @@ let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 
 
-" vim-textobj-rubyblock:
+"" vim-textobj-rubyblock:
 " Required for textobj-rubyblock
 runtime macros/matchit.vim
 
 
-" ultisnips:
+"" ultisnips:
 " Use tab/shift-tab to navigate between tabstops
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 
-" tagbar
+"" tagbar
 let g:tagbar_type_puppet = {
     \ 'ctagstype': 'puppet',
     \ 'kinds': [
@@ -71,41 +84,42 @@ let g:tagbar_type_puppet = {
     \}
 
 
-" fzf:
+"" fzf:
 if has('nvim')
   let $FZF_DEFAULT_OPTS .= ' --inline-info'
 endif
 let g:fzf_command_prefix = 'Fzf'
 
 
-" ack:
+"" ack
+" User ripgrep
 let g:ackprg = 'rg --vimgrep'
 
 
+"" vim-terraform
 " Highlight .hcl files as if they were terraform
 autocmd BufNewFile,BufRead *.hcl set ft=hcl
 autocmd BufNewFile,BufRead *.hcl set syntax=terraform
 autocmd BufNewFile,BufRead *.hcl set ts=2
 autocmd BufNewFile,BufRead *.hcl set expandtab
 
-
 " Auto format terraform files
 let g:terraform_fmt_on_save = 1
 
 
-" deoplete
+"" deoplete
 call deoplete#custom#option('ignore_sources', {'_': ['buffer','around']})
 let g:deoplete#enable_at_startup = 1
 
 
+"" gutenntags
 " Disable gutentags for git commit/rebase files
 au FileType gitcommit,gitrebase let g:gutentags_enabled
-
 " Place tags files in ~/.vimtmp
 let g:gutentags_cache_dir = expand('~/.vimtmp/')
 
 
-" LSP
+"" LanguageClient-neovim
 let g:LanguageClient_serverCommands = {
     \ 'terraform': ['~/bin/terraform-lsp'],
     \ }
