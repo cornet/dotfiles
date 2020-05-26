@@ -5,7 +5,6 @@ filetype off
 " Plugin Management
 "
 call plug#begin('~/.config/nvim/plugged')
-" 
 " Interface Plugins
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -13,22 +12,41 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 
+" Colourschems
+Plug 'chriskempson/base16-vim'
+
+" Async linting & make framework
+Plug 'benekastah/neomake'
+
+" Async competion framework
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
 " Vimwiki!
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 
 " Git integration
 Plug 'tpope/vim-fugitive'
 
-" General code editing plugins
-Plug 'godlygeek/tabular'
+" Auto close brackets, quotes & structures
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-endwise'
+
+" Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'xolox/vim-misc'
+Plug 'cornet/my-vim-snippets'
+
+" Text alignment
+Plug 'godlygeek/tabular'
+
+" ctags integration
 Plug 'majutsushi/tagbar'
-Plug 'benekastah/neomake'
 Plug 'ludovicchabant/vim-gutentags'
+
+" Search & display in quickfix
 Plug 'mileszs/ack.vim'
 
+" Language Server Client
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
@@ -43,15 +61,6 @@ Plug 'cornet/vim-puppet'
 " Go
 Plug 'fatih/vim-go'
 
-" Syntax highlighting
-Plug 'wellbredgrapefruit/tomdoc.vim'
-
-" Colourschems
-Plug 'chriskempson/base16-vim'
-
-" deoplete
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
 " Terraform
 Plug 'hashivim/vim-terraform'
 " This isn't really a plugin just a collection of snipmate snippets.
@@ -63,9 +72,6 @@ Plug 'juliosueiras/vim-terraform-snippets', {
       \ 'on': [],
       \ }
 Plug '~/.config/nvim/plugged/vim-terraform-snippets'
-
-" my-vim-snippets
-Plug 'cornet/my-vim-snippets'
 
 " vim-tmux-navigator
 Plug 'christoomey/vim-tmux-navigator'
