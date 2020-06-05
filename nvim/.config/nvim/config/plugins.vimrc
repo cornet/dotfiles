@@ -116,7 +116,7 @@ let g:deoplete#enable_at_startup = 1
 
 "" gutenntags
 " Disable gutentags for git commit/rebase files
-au FileType gitcommit,gitrebase let g:gutentags_enabled
+au FileType gitcommit,gitrebase let g:gutentags_enabled=0
 " Place tags files in ~/.vimtmp
 let g:gutentags_cache_dir = expand('~/.vimtmp/')
 

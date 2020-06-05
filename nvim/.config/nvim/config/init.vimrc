@@ -22,7 +22,8 @@ Plug 'benekastah/neomake'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Vimwiki!
-Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
+Plug 'vimwiki/vimwiki'
+Plug 'mattn/calendar-vim'
 
 " Git integration
 Plug 'tpope/vim-fugitive'
