@@ -6,5 +6,8 @@ export AWS_ASSUME_ROLE_TTL=1h
 # Terraform plugin cache dir
 export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
 
+# aws-vault
+export AWS_VAULT_KEYCHAIN_NAME=login
+
 # Use Ruby 2.7 by default
 chruby 2.7
