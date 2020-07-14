@@ -1,3 +1,4 @@
+# zmodload zsh/zprof
 source <(antibody init)
 
 # Tell oh-my-zsh where it lives
