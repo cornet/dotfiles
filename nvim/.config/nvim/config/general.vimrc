@@ -3,7 +3,7 @@ syntax enable
 
 " Revert annoying nvim defaults
 set noincsearch
-set mouse=
+set mouse=a
 set clipboard+=unnamedplus
 
 " Live find/replace
