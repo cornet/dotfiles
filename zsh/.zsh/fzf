@@ -85,7 +85,7 @@ tm() {
 # Search gopass password manager
 gp() {
   pass=$(gopass ls -f | fzf +m) &&
-	gopass -c "$pass"
+	gopass show -c "$pass"
 }
 
 # Search lastpass pass password manager
