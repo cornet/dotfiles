@@ -10,6 +10,7 @@ export PATH="/usr/local/opt/libxml2/bin:$PATH"
 export PATH=$PATH:~/node_modules/.bin
 
 # Go Paths
+export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
