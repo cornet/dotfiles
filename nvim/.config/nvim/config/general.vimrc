@@ -39,6 +39,10 @@ set t_vb=
 " Make backspace behave properly
 set backspace=eol,start,indent
 
+" Spellcheck
+set spell spelllang=en_gb
+set complete+=kspell
+
 " Tabwidth options
 set shiftwidth=2
 set tabstop=2
