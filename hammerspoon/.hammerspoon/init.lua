@@ -26,13 +26,20 @@ end)
 -- Disable Window Animations or it's slooww....
 hs.window.animationDuration = 0
 
-hyper.bindKeyWithModifiers({"cmd", "shift"}, "return", function()
+hyper.bindKeyWithModifiers({"alt", "shift"}, "f", function()
   hs.execute('/usr/local/bin/yabai -m window --toggle zoom-fullscreen')
 end)
 
+hyper.bindKeyWithModifiers({"alt", "shift"}, "space", function()
+  hs.execute('/usr/local/bin/yabai -m window --toggle float')
+end)
 
-hyper.bindKeyWithModifiers({"cmd", "shift"}, "space", function()
+hyper.bindKeyWithModifiers({"alt", "shift"}, ".", function()
   hs.execute('/usr/local/bin/yabai -m space --rotate 90')
+end)
+
+hyper.bindKeyWithModifiers({"alt", "shift"}, ",", function()
+  hs.execute('/usr/local/bin/yabai -m space --rotate 270')
 end)
 
 
@@ -87,150 +94,3 @@ end)
 hyper.bindKeyWithModifiers({"cmd", "shift"}, "h", function()
   hs.execute('/usr/local/bin/yabai -m window --warp west')
 end)
-
-
-
--- -- Window Placement Hotkeys
--- -- Fullscreen
--- hs.hotkey.bind({"cmd", "shift"}, "return", function()
--- 	if hs.window.focusedWindow() then
--- 		local win = hs.window.focusedWindow()
--- 		local f = win:frame()
--- 		local screen = win:screen()
--- 		local geo = screen:frame()
--- 
--- 		f.x = geo.x
--- 		f.y = geo.y 
--- 		f.w = geo.w
--- 		f.h = geo.h
--- 		win:setFrame(f)
--- 	end
--- end)
--- 
--- -- Top 1/2
--- hs.hotkey.bind({"cmd", "shift"}, "k", function()
--- 	if hs.window.focusedWindow() then
--- 		local win = hs.window.focusedWindow()
--- 		local f = win:frame()
--- 		local screen = win:screen()
--- 		local geo = screen:frame()
--- 
--- 		f.x = geo.x + 10
--- 		f.y = geo.y + 10
--- 		f.w = geo.w - 20
--- 		f.h = geo.h / 2 - 20
--- 		win:setFrame(f)
--- 	end
--- end)
--- 
--- -- Bottom 1/2
--- hs.hotkey.bind({"cmd", "shift"}, "j", function()
--- 	if hs.window.focusedWindow() then
--- 		local win = hs.window.focusedWindow()
--- 		local f = win:frame()
--- 		local screen = win:screen()
--- 		local geo = screen:frame()
--- 
--- 		f.x = geo.x + 10
--- 		f.y = geo.y + ( geo.h / 2) + 10
--- 		f.w = geo.w - 20
--- 		f.h = geo.h / 2 - 20
--- 		win:setFrame(f)
--- 	end
--- end)
--- 
--- -- Left 1/2
--- hs.hotkey.bind({"cmd", "shift"}, "h", function()
--- 	if hs.window.focusedWindow() then
--- 		local win = hs.window.focusedWindow()
--- 		local f = win:frame()
--- 		local screen = win:screen()
--- 		local geo = screen:frame()
--- 
--- 		f.x = geo.x + 10
--- 		f.y = geo.y + 10
--- 		f.w = geo.w / 2 - 20
--- 		f.h = geo.h - 20
--- 		win:setFrame(f)
--- 	end
--- end)
--- 
--- -- Right 1/2
--- hs.hotkey.bind({"cmd", "shift"}, "l", function()
--- 	if hs.window.focusedWindow() then
--- 		local win = hs.window.focusedWindow()
--- 		local f = win:frame()
--- 		local screen = win:screen()
--- 		local geo = screen:frame()
--- 
--- 		f.x = geo.x + (geo.w / 2) + 10
--- 		f.y = geo.y + 10
--- 		f.w = geo.w / 2 - 20
--- 		f.h = geo.h - 20
--- 		win:setFrame(f)
--- 	end
--- end)
--- 
--- -- Top left
--- hs.hotkey.bind({"cmd", "shift"}, "y", function()
--- 	if hs.window.focusedWindow() then
--- 		local win = hs.window.focusedWindow()
--- 		local f = win:frame()
--- 		local screen = win:screen()
--- 		local geo = screen:frame()
--- 
--- 		f.x = geo.x + 10
--- 		f.y = geo.y + 10
--- 		f.w = geo.w / 2 - 20 
--- 		f.h = geo.h / 2 - 20
--- 		win:setFrame(f)
--- 	end
--- end)
--- 
--- -- Top right
--- hs.hotkey.bind({"cmd", "shift"}, "p", function()
--- 	if hs.window.focusedWindow() then
--- 		local win = hs.window.focusedWindow()
--- 		local f = win:frame()
--- 		local screen = win:screen()
--- 		local geo = screen:frame()
--- 
--- 		f.x = geo.x + (geo.w / 2) + 10
--- 		f.y = geo.y + 10
--- 		f.w = geo.w / 2 - 20
--- 		f.h = geo.h / 2 - 20
--- 		win:setFrame(f)
--- 	end
--- end)
--- 
--- -- Bottom right
--- hs.hotkey.bind({"cmd", "shift"}, ".", function()
--- 	if hs.window.focusedWindow() then
--- 		local win = hs.window.focusedWindow()
--- 		local f = win:frame()
--- 		local screen = win:screen()
--- 		local geo = screen:frame()
--- 
--- 		f.x = geo.x + (geo.w / 2) + 10
--- 		f.y = geo.y + (geo.h / 2) + 10
--- 		f.w = geo.w / 2 - 20
--- 		f.h = geo.h / 2 - 20
--- 		win:setFrame(f)
--- 	end
--- end)
--- 
--- -- Bottom left
--- hs.hotkey.bind({"cmd", "shift"}, "b", function()
--- 	if hs.window.focusedWindow() then
--- 		local win = hs.window.focusedWindow()
--- 		local f = win:frame()
--- 		local screen = win:screen()
--- 		local geo = screen:frame()
--- 
--- 		f.x = geo.x + 10
--- 		f.y = geo.y + (geo.h / 2) + 10
--- 		f.w = geo.w / 2 - 20
--- 		f.h = geo.h / 2 - 20
--- 		win:setFrame(f)
--- 	end
--- end)
