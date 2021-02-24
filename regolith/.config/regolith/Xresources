@@ -1,2 +1,3 @@
 gnome.wallpaper: 
-rofi.font:                           Fira Sans Book 28
+rofi.font:  Fira Sans Book 28
+i3xrocks.date.format2: "%Y/%m/%d %H:%M"
