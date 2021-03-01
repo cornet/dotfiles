@@ -42,7 +42,7 @@ let g:vimwiki_hl_headers = 1
 "" airline:
 " Always display airline with dark theme
 set laststatus=2
-let g:airline_theme='base16_chalk'
+let g:airline_theme='onedark'
 
 " Clear out default symbols and load new ones
 if !exists('g:airline_symbols')
