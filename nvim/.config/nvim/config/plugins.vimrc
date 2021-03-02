@@ -27,6 +27,14 @@ let g:vimwiki_list = [{
       \ 'ext': '.md',
       \ 'nested_syntaxes': {'ruby': 'ruby', 'bash': 'sh', 'terraform': 'terraform', 'json': 'json'},
       \ 'auto_tags': 1,
+      \ 'auto_toc': 1,
+      \ 'auto_diary_index': 1
+      \ },{
+      \ 'path': '~/Documents/Notes',
+      \ 'syntax': 'markdown',
+      \ 'ext': '.md',
+      \ 'nested_syntaxes': {'ruby': 'ruby', 'bash': 'sh', 'terraform': 'terraform', 'json': 'json'},
+      \ 'auto_tags': 1,
       \ 'auto_toc': 1
       \ }]
 " Don't associate all .md files with vimwiki
@@ -34,13 +42,22 @@ let g:vimwiki_global_ext = 0
 " Change to current wiki dir
 let g:vimwiki_auto_chdir = 1
 " Add header title when creating page
-let g:vimwiki_auto_header = 1
+let g:vimwiki_auto_header = 0
 " Alternate header colours
 let g:vimwiki_hl_headers = 1
+let g:vimwiki_table_mappings=0
+
 
 "" vim-zettel:
 " Include title in note name
-let g:zettel_format = "%y%m%d-%H%M-%title"
+let g:zettel_format = "%Y%m%d%H%M%S-%title"
+
+let g:zettel_options = [{},{
+      \ 'front_matter' : [['tags', ':untagged:']]
+      \ }]
+
+let g:zettel_backlinks_title = "Backlinks"
+let g:zettel_fzf_command = "rg --column --line-number --ignore-case --no-heading --color=always "
 
 "" airline:
 " Always display airline with dark theme
@@ -143,3 +160,8 @@ augroup fern-custom
   autocmd! *
   autocmd FileType fern call s:init_fern()
 augroup END
+
+
+"" pear-tree
+" Disable pear tree for vimwiki
+let g:pear_tree_ft_disabled = ['vimwiki']

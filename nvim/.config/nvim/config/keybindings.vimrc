@@ -49,3 +49,8 @@ map <leader>gc :Gcommit -v -q<cr>
 
 " TagBar
 map <leader>t :TagbarToggle<cr>
+
+" VimWiki
+" Switch to notes wiki and create new note
+noremap <leader>zn :VimwikiIndex 2<cr>:ZettelNew<space>
+noremap <leader>zi :VimwikiIndex 2<cr>:VimwikiGoto Inbox<cr>:%d<cr>:ZettelInbox<cr>
