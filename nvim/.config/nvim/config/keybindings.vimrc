@@ -1,9 +1,3 @@
-" Move between windows easily
-"map <C-j> <C-W>j
-"map <C-k> <C-W>k
-"map <C-h> <C-W>h
-"map <C-l> <C-W>l
-
 " Quick toggle of line numbers
 map <leader>l :set nu!<cr>
 
@@ -39,7 +33,8 @@ imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
 " NERDTree
-map <leader>ne :NERDTree<cr>
+"map <leader>ne :NERDTree<cr>
+map <leader>ne :Fern -drawer .<cr>
 
 " Ack
 nnoremap <Leader>a :Ack!<Space>

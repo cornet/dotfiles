@@ -10,7 +10,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'scrooloose/nerdtree'
+" Plug 'scrooloose/nerdtree'
 
 " Colourschems
 Plug 'chriskempson/base16-vim'
@@ -24,9 +24,11 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Vimwiki!
 Plug 'vimwiki/vimwiki'
 Plug 'mattn/calendar-vim'
+Plug 'michal-h21/vim-zettel'
 
 " Git integration
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 " Auto close brackets, quotes & structures
 Plug 'jiangmiao/auto-pairs'
@@ -73,6 +75,11 @@ Plug 'juliosueiras/vim-terraform-snippets', {
       \ 'on': [],
       \ }
 Plug '~/.config/nvim/plugged/vim-terraform-snippets'
+
+Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/fern-git-status.vim'
+Plug 'LumaKernel/fern-mapping-fzf.vim'
+Plug 'hrsh7th/fern-mapping-collapse-or-leave'
 
 " vim-tmux-navigator
 Plug 'christoomey/vim-tmux-navigator'

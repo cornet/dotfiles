@@ -43,6 +43,9 @@ set backspace=eol,start,indent
 set spell spelllang=en_gb
 set complete+=kspell
 
+" Make things like gitgutter more responsive
+set updatetime=100
+
 " Tabwidth options
 set shiftwidth=2
 set tabstop=2

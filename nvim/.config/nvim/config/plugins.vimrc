@@ -38,6 +38,9 @@ let g:vimwiki_auto_header = 1
 " Alternate header colours
 let g:vimwiki_hl_headers = 1
 
+"" vim-zettel:
+" Include title in note name
+let g:zettel_format = "%y%m%d-%H%M-%title"
 
 "" airline:
 " Always display airline with dark theme
@@ -125,3 +128,18 @@ let g:gutentags_cache_dir = expand('~/.vimtmp/')
 let g:LanguageClient_serverCommands = {
     \ 'terraform': ['~/bin/terraform-lsp'],
     \ }
+
+"" Fern
+" Function that we'll call when fern buffer is selected
+" used to reset tmux-navigator mappings
+function! s:init_fern() abort
+  nnoremap <buffer><silent> <c-h> :TmuxNavigateLeft<cr>
+  nnoremap <buffer><silent> <c-j> :TmuxNavigateDown<cr>
+  nnoremap <buffer><silent> <c-k> :TmuxNavigateUp<cr>
+  nnoremap <buffer><silent> <c-l> :TmuxNavigateRight<cr>
+endfunction
+
+augroup fern-custom
+  autocmd! *
+  autocmd FileType fern call s:init_fern()
+augroup END
