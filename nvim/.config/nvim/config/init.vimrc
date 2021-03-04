@@ -24,7 +24,6 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Vimwiki!
 Plug 'vimwiki/vimwiki'
 Plug 'mattn/calendar-vim'
-Plug 'michal-h21/vim-zettel'
 
 " Git integration
 Plug 'tpope/vim-fugitive'

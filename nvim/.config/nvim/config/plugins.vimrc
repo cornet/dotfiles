@@ -48,19 +48,6 @@ let g:vimwiki_hl_headers = 1
 let g:vimwiki_table_mappings=0
 
 
-"" vim-zettel:
-" Include title in note name
-let g:zettel_format = "%Y%m%d%H%M%S-%title"
-
-let g:zettel_options = [{
-     \ 'front_matter' : [['tags', ':untagged:']]
-     \ },{
-     \ 'front_matter' : [['tags', ':untagged:']]
-     \ }]
-
-let g:zettel_backlinks_title = "Backlinks"
-let g:zettel_fzf_command = "rg --column --line-number --ignore-case --no-heading --color=always "
-
 "" airline:
 " Always display airline with dark theme
 set laststatus=2
