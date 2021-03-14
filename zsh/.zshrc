@@ -12,6 +12,8 @@ robbyrussell/oh-my-zsh path:plugins/chruby
 "
 antibody bundle zsh-users/zsh-completions
 
+antibody bundle wfxr/forgit
+
 # Handy functions
 is_osx() {
   [[ "${OSTYPE}" = darwin* ]]
@@ -31,3 +33,5 @@ done
 PAGER=bat
 
 eval "$(starship init zsh)"
+
+PATH=$PATH:/home/nathan/010editor;export PATH; # ADDED BY INSTALLER - DO NOT EDIT OR DELETE THIS COMMENT - 87FF8EFC-483D-BCAA-D67D-735CF60410D1 7B868C8A-7FD6-13EE-B16B-FE7EFF9905DD
