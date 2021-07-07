@@ -10,7 +10,15 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" Plug 'scrooloose/nerdtree'
+
+" Telescope
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
+" TreeSitter
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
 
 " Colourschems
 Plug 'chriskempson/base16-vim'
@@ -49,10 +57,7 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'mileszs/ack.vim'
 
 " Language Server Client
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+Plug 'neovim/nvim-lspconfig'
 
 " Ruby/Puppet Plugins
 Plug 'vim-ruby/vim-ruby'

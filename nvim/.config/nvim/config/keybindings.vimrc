@@ -12,28 +12,14 @@ map <leader>te :tabedit
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove
 
-" Fzf mapping
-map <C-p> :FzfGitFiles<cr>
-map <leader>ft :FzfBTags<cr>
-map <leader>fb :FzfBuffers<cr>
-map <leader>fc :FzfCommits<cr>
-map <leader>fs :FzfSnippets<cr>
-map <leader>fg :FzfGitFiles<cr>
-map <leader>ff :FZF<cr>
+nnoremap <C-p> <cmd>Telescope git_files<cr>
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fc <cmd>Telescope git_commits<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
-" Mapping selecting mappings
-nmap <leader><tab> <plug>(fzf-maps-n)
-xmap <leader><tab> <plug>(fzf-maps-x)
-omap <leader><tab> <plug>(fzf-maps-o)
-
-" Insert mode completion
-imap <c-x><c-k> <plug>(fzf-complete-word)
-imap <c-x><c-f> <plug>(fzf-complete-path)
-imap <c-x><c-j> <plug>(fzf-complete-file-ag)
-imap <c-x><c-l> <plug>(fzf-complete-line)
-
-" NERDTree
-"map <leader>ne :NERDTree<cr>
+" Fern
 map <leader>ne :Fern -drawer .<cr>
 
 " Ack

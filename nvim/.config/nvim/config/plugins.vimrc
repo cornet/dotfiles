@@ -11,12 +11,6 @@ let g:neomake_puppet_puppet_maker = {
 
 let g:neomake_puppet_enable_makers = ['puppet']
 
-
-"" nerdtree:
-" Change dir whenever root changes
-let NERDTreeChDirMode=2
-
-
 "" vimwiki:
 " Set path to wiki
 " auto_tags: update tags file on save
@@ -153,4 +147,14 @@ augroup END
 
 "" pear-tree
 " Disable pear tree for vimwiki
-let g:pear_tree_ft_disabled = ['vimwiki']
+let g:pear_tree_ft_disabled = ['vimwiki', 'TelescopePrompt']
+
+
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+  },
+}
+EOF
