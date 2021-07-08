@@ -30,7 +30,8 @@ for file in ~/.zsh/*; do
   source "${file}"
 done
 
-PAGER=bat
+# Tells 'less' not to paginate if less than a page
+export LESS="-F -X $LESS"
 
 eval "$(starship init zsh)"
 
