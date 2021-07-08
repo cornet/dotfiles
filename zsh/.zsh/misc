@@ -9,5 +9,17 @@ export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
 # aws-vault
 export AWS_VAULT_KEYCHAIN_NAME=login
 
+# Use apple script creds helper
+if is_osx; then
+  export AWS_VAULT_PROMPT=osascript
+  export AWS_SDK_LOAD_CONFIG=1
+fi
+
+# Increase maxfiles and maxprocs from pathetic defaults
+if is_osx; then
+  ulimit -n 200000
+  ulimit -u 2048
+fi
+
 # Use Ruby 2.7 by default
 chruby 2.7
