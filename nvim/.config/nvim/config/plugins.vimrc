@@ -157,4 +157,7 @@ require'nvim-treesitter.configs'.setup {
     enable = true,              -- false will disable the whole extension
   },
 }
+
+ -- Add extra filetypes for telescope
+ require'plenary.filetype'.add_file('terraform')
 EOF

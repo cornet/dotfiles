@@ -31,7 +31,7 @@ map <leader>gs :Gstatus<cr>
 map <leader>gl :Glog<cr>
 map <leader>gb :Gbrowse<cr>
 map <leader>ga :Git add %:p<cr><cr>
-map <leader>gc :Gcommit -v -q<cr>
+map <leader>gc :G commit -v -q<cr>
 
 " TagBar
 map <leader>t :TagbarToggle<cr>

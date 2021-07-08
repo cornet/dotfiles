@@ -1,0 +1,5 @@
+return {
+  extension = {
+    ['tf'] = 'terraform',
+  }
+}
