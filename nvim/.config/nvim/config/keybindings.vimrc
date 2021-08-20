@@ -20,7 +20,10 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " Fern
-map <leader>ne :Fern -drawer .<cr>
+nnoremap <leader>ne :NvimTreeToggle<cr>
+nnoremap <leader>r :NvimTreeRefresh<CR>
+nnoremap <leader>n :NvimTreeFindFile<CR>
+
 
 " Ack
 nnoremap <Leader>a :Ack!<Space>

@@ -80,10 +80,13 @@ Plug 'juliosueiras/vim-terraform-snippets', {
       \ }
 Plug '~/.config/nvim/plugged/vim-terraform-snippets'
 
-Plug 'lambdalisue/fern.vim'
-Plug 'lambdalisue/fern-git-status.vim'
-Plug 'LumaKernel/fern-mapping-fzf.vim'
-Plug 'hrsh7th/fern-mapping-collapse-or-leave'
+" Plug 'lambdalisue/fern.vim'
+" Plug 'lambdalisue/fern-git-status.vim'
+" Plug 'LumaKernel/fern-mapping-fzf.vim'
+" Plug 'hrsh7th/fern-mapping-collapse-or-leave'
+
+Plug 'kyazdani42/nvim-web-devicons' " for file icons
+Plug 'kyazdani42/nvim-tree.lua'
 
 " vim-tmux-navigator
 Plug 'christoomey/vim-tmux-navigator'
