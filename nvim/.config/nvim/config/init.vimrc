@@ -87,6 +87,7 @@ Plug '~/.config/nvim/plugged/vim-terraform-snippets'
 
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'kyazdani42/nvim-tree.lua'
+Plug 'akinsho/bufferline.nvim'
 
 " vim-tmux-navigator
 Plug 'christoomey/vim-tmux-navigator'

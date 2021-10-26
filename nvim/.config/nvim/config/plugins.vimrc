@@ -154,7 +154,7 @@ require'nvim-treesitter.configs'.setup {
  -- Add extra filetypes for telescope
  require'plenary.filetype'.add_file('terraform')
 
-
+require'nvim-tree'.setup { }
 
 local nvim_lsp = require('lspconfig')
 
@@ -191,18 +191,20 @@ local on_attach = function(client, bufnr)
 
 end
 
- require'lspconfig'.terraformls.setup{
-   on_attach = on_attach,
-   flags = {
-     debounce_text_changes = 150,
-   },
-   cmd = {"terraform-lsp"};
- }
+require'lspconfig'.terraformls.setup{
+  on_attach = on_attach,
+  flags = {
+    debounce_text_changes = 150,
+  },
+  cmd = {"terraform-lsp"};
+}
 
- require'lspconfig'.solargraph.setup{
-   on_attach = on_attach,
-   flags = {
-     debounce_text_changes = 150,
-   },
- }
+require'lspconfig'.solargraph.setup{
+  on_attach = on_attach,
+  flags = {
+    debounce_text_changes = 150,
+  },
+}
+
+ require("bufferline").setup{}
 EOF
