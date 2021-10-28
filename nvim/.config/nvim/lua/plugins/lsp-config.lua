@@ -47,4 +47,3 @@ require'lspconfig'.solargraph.setup{
     debounce_text_changes = 150,
   },
 }
-

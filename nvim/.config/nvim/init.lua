@@ -1,11 +1,12 @@
 require('settings')
 require('keymappings')
+require('plugins/packer')
+
 require('plugins/ack')
 require('plugins/airline')
 require('plugins/bufferline')
 require('plugins/lsp-config')
 require('plugins/nvim-tree')
-require('plugins/packer')
 require('plugins/treesitter')
 require('plugins/ultisnips')
 require('plugins/vimwiki')
