@@ -10,7 +10,10 @@ return require('packer').startup(function()
   use 'vim-airline/vim-airline-themes'
 
   -- Use tab bar for displaying buffers
-  use 'akinsho/bufferline.nvim'
+  use {
+    'akinsho/bufferline.nvim',
+    config = function() require('bufferline').setup{} end
+  }
 
   -- vim-tmux-navigator
   use 'christoomey/vim-tmux-navigator'
@@ -18,9 +21,9 @@ return require('packer').startup(function()
   -- File explorer
   use {
     'kyazdani42/nvim-tree.lua',
-    requires = 'kyazdani42/nvim-web-devicons'
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = function() require('nvim-tree').setup() end
   }
-
 
   -- Telescope
   use {
@@ -33,15 +36,34 @@ return require('packer').startup(function()
   use 'nvim-treesitter/playground'
 
   -- Search & display in quickfix
-  use 'mileszs/ack.vim'
+  use {
+    'mileszs/ack.vim',
+    config = [[vim.g.ackprg = 'rg --vimgrep']]
+  }
 
   -- Snippets
-  use 'SirVer/ultisnips'
+  use {
+    'SirVer/ultisnips',
+    config = {
+      -- Use tab/shift-tab to navigate between tabstops
+      [[vim.g.UltiSnipsExpandTrigger = "<tab>"]],
+      [[vim.g.UltiSnipsJumpForwardTrigger = "<tab>"]],
+      [[vim.g.UltiSnipsJumpBackwardTrigger = "<s-tab>"]],
+    },
+  }
   use 'honza/vim-snippets'
   use 'cornet/my-vim-snippets'
 
   -- Language Server Client
   use 'neovim/nvim-lspconfig'
+  use 'glepnir/lspsaga.nvim'
+
+  use 'quangnguyen30192/cmp-nvim-ultisnips'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
+  use 'hrsh7th/nvim-cmp'
 
   -- Git integration
   use 'tpope/vim-fugitive'
@@ -49,7 +71,10 @@ return require('packer').startup(function()
 
   -- Language helpers
   use { 'fatih/vim-go', run = ':GoUpdateBinaries' }
-  use 'hashivim/vim-terraform'
+  use {
+    'hashivim/vim-terraform',
+    config = [[vim.g.terraform_fmt_on_save = 1]]
+  }
 
   use {
     'vim-ruby/vim-ruby',
