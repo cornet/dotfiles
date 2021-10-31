@@ -56,7 +56,10 @@ return require('packer').startup(function()
 
   -- Language Server Client
   use 'neovim/nvim-lspconfig'
-  use 'glepnir/lspsaga.nvim'
+  use {
+    'glepnir/lspsaga.nvim',
+    config = function() require('lspsaga').init_lsp_saga() end,
+  }
 
   use 'quangnguyen30192/cmp-nvim-ultisnips'
   use 'hrsh7th/cmp-nvim-lsp'
