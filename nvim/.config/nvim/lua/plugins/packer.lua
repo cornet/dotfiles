@@ -22,7 +22,13 @@ return require('packer').startup(function()
   use {
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons',
-    config = function() require('nvim-tree').setup() end
+    config = function() require('nvim-tree').setup {
+      filters = {
+        dotfiles = true,
+        custom = {}
+      },
+    }
+    end
   }
 
   -- Telescope
@@ -57,8 +63,15 @@ return require('packer').startup(function()
   -- Language Server Client
   use 'neovim/nvim-lspconfig'
   use {
-    'glepnir/lspsaga.nvim',
-    config = function() require('lspsaga').init_lsp_saga() end,
+    "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+    config = function()
+      require("trouble").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
   }
 
   use 'quangnguyen30192/cmp-nvim-ultisnips'
@@ -70,7 +83,15 @@ return require('packer').startup(function()
 
   -- Git integration
   use 'tpope/vim-fugitive'
-  use 'airblade/vim-gitgutter'
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim'
+    },
+    config = function()
+      require('gitsigns').setup()
+    end
+  }
 
   -- Language helpers
   use { 'fatih/vim-go', run = ':GoUpdateBinaries' }
