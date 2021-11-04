@@ -50,6 +50,7 @@ vim.cmd([[
 colorscheme base16-onedark
 let base16colorspace=256
 ]])
+-- vim.cmd[[colorscheme tokyonight]]
 
 -- Filetype options
 vim.cmd([[

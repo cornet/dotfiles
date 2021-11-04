@@ -4,6 +4,7 @@ return require('packer').startup(function()
 
   -- Colourschems
   use 'chriskempson/base16-vim'
+  use 'folke/tokyonight.nvim'
 
   -- Interface Plugins
   use 'vim-airline/vim-airline'
@@ -18,6 +19,10 @@ return require('packer').startup(function()
   -- vim-tmux-navigator
   use 'christoomey/vim-tmux-navigator'
 
+  use {
+    "folke/which-key.nvim",
+    config = function() require("which-key").setup{} end
+  }
   -- File explorer
   use {
     'kyazdani42/nvim-tree.lua',
@@ -47,18 +52,8 @@ return require('packer').startup(function()
     config = [[vim.g.ackprg = 'rg --vimgrep']]
   }
 
-  -- Snippets
-  use {
-    'SirVer/ultisnips',
-    config = {
-      -- Use tab/shift-tab to navigate between tabstops
-      [[vim.g.UltiSnipsExpandTrigger = "<tab>"]],
-      [[vim.g.UltiSnipsJumpForwardTrigger = "<tab>"]],
-      [[vim.g.UltiSnipsJumpBackwardTrigger = "<s-tab>"]],
-    },
-  }
-  use 'honza/vim-snippets'
-  use 'cornet/my-vim-snippets'
+  
+  -- use 'cornet/my-vim-snippets'
 
   -- Language Server Client
   use 'neovim/nvim-lspconfig'
@@ -74,12 +69,23 @@ return require('packer').startup(function()
     end
   }
 
-  use 'quangnguyen30192/cmp-nvim-ultisnips'
+  -- use 'quangnguyen30192/cmp-nvim-ultisnips'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
+  --
+  -- Snippets
+  use {
+    "L3MON4D3/LuaSnip",
+    wants = "friendly-snippets",
+    config = function()
+      require("luasnip/loaders/from_vscode").lazy_load()
+    end
+  }
+  use "saadparwaiz1/cmp_luasnip"
+  use "rafamadriz/friendly-snippets"
 
   -- Git integration
   use 'tpope/vim-fugitive'

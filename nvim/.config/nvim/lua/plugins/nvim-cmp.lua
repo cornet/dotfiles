@@ -3,7 +3,7 @@ local cmp = require'cmp'
 cmp.setup({
   snippet = {
     expand = function(args)
-      vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+      require'luasnip'.lsp_expand(args.body)
     end,
   },
   mapping = {
@@ -19,7 +19,7 @@ cmp.setup({
   },
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
-    { name = 'ultisnips' }, -- For ultisnips users.
+    { name = 'luasnip' },
   }, {
     { name = 'buffer' },
   })
