@@ -29,3 +29,5 @@ map('n', '<leader>xd', '<cmd>Trouble lsp_document_diagnostics<cr>', default_opts
 map('n', '<leader>xl', '<cmd>Trouble loclist<cr>', default_opts)
 map('n', '<leader>xq', '<cmd>Trouble quickfix<cr>', default_opts)
 map('n', 'gR', '<cmd>Trouble lsp_references<cr>', default_opts)
+
+map('n', '<leader>sb', '<cmd>SymbolsOutline<cr>', default_opts)

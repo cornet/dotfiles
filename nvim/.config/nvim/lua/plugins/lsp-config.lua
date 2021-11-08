@@ -44,7 +44,6 @@ require'lspconfig'.terraformls.setup{
   flags = {
     debounce_text_changes = 150,
   },
-  cmd = {"terraform-lsp"};
 }
 
 require'lspconfig'.solargraph.setup{

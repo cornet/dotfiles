@@ -28,6 +28,7 @@ return require('packer').startup(function()
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons',
     config = function() require('nvim-tree').setup {
+      disable_netrw = false,
       filters = {
         dotfiles = true,
         custom = {}
@@ -69,6 +70,16 @@ return require('packer').startup(function()
     end
   }
 
+  -- LSP Symbols Bar
+  use {
+    'simrat39/symbols-outline.nvim',
+    config = [[
+    vim.g.symbols_outline = {
+      auto_preview = false
+    }
+    ]]
+  }
+
   -- use 'quangnguyen30192/cmp-nvim-ultisnips'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
@@ -98,6 +109,7 @@ return require('packer').startup(function()
       require('gitsigns').setup()
     end
   }
+  use { 'tpope/vim-rhubarb' }
 
   -- Language helpers
   use { 'fatih/vim-go', run = ':GoUpdateBinaries' }
@@ -115,6 +127,9 @@ return require('packer').startup(function()
   use 'vimwiki/vimwiki'
   use 'mattn/calendar-vim'
 
+  -- Text alignment
+  use 'godlygeek/tabular'
+
   --[[
 
   -- Async linting & make framework
@@ -126,9 +141,6 @@ return require('packer').startup(function()
   -- Auto close brackets, quotes & structures
   use 'tmsvg/pear-tree'
   use 'tpope/vim-endwise'
-
-  -- Text alignment
-  use 'godlygeek/tabular'
 
   -- ctags integration
   use 'majutsushi/tagbar'
