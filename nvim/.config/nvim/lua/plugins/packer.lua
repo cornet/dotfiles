@@ -54,7 +54,6 @@ return require('packer').startup(function()
   }
 
   
-  -- use 'cornet/my-vim-snippets'
 
   -- Language Server Client
   use 'neovim/nvim-lspconfig'
@@ -80,13 +79,12 @@ return require('packer').startup(function()
     ]]
   }
 
-  -- use 'quangnguyen30192/cmp-nvim-ultisnips'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
-  --
+
   -- Snippets
   use {
     "L3MON4D3/LuaSnip",
@@ -109,7 +107,7 @@ return require('packer').startup(function()
       require('gitsigns').setup()
     end
   }
-  use { 'tpope/vim-rhubarb' }
+  use 'tpope/vim-rhubarb'
 
   -- Language helpers
   use { 'fatih/vim-go', run = ':GoUpdateBinaries' }
@@ -135,9 +133,6 @@ return require('packer').startup(function()
   -- Async linting & make framework
   use 'benekastah/neomake'
 
-  -- Async competion framework
-  use { 'Shougo/deoplete.nvim', run = ':UpdateRemotePlugins' }
-
   -- Auto close brackets, quotes & structures
   use 'tmsvg/pear-tree'
   use 'tpope/vim-endwise'
@@ -160,7 +155,6 @@ return require('packer').startup(function()
   --   \ }
   -- use '~/.config/nvim/plugged/vim-terraform-snippets'
 
-
+  -- use 'cornet/my-vim-snippets'
 --]]
---
 end)
