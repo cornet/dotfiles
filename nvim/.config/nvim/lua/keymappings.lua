@@ -9,6 +9,7 @@ map('n', '<leader>fb', '<cmd>Telescope buffers<cr>', default_opts)
 map('n', '<leader>fc', '<cmd>Telescope git_commits<cr>', default_opts)
 map('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', default_opts)
 map('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', default_opts)
+map('n', '<leader>fp', '<cmd>Telescope projects<cr>', default_opts)
 
 map('n', '<leader>a', ':Ack!<Space>', {noremap = true})
 

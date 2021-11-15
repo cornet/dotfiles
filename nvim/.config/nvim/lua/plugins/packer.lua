@@ -28,7 +28,15 @@ return require('packer').startup(function()
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons',
     config = function() require('nvim-tree').setup {
+      update_cwd = true,
+
+      update_focused_file = {
+        enable = true,
+        update_cwd = true
+      },
+
       disable_netrw = false,
+
       filters = {
         dotfiles = true,
         custom = {}
@@ -53,8 +61,17 @@ return require('packer').startup(function()
     config = [[vim.g.ackprg = 'rg --vimgrep']]
   }
 
-  
-
+  use {
+    "ahmedkhalf/project.nvim",
+    config = function()
+      require("project_nvim").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+      require('telescope').load_extension('projects')
+    end
+  }  
   -- Language Server Client
   use 'neovim/nvim-lspconfig'
   use {
