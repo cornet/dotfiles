@@ -64,11 +64,7 @@ return require('packer').startup(function()
   use {
     "ahmedkhalf/project.nvim",
     config = function()
-      require("project_nvim").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
+      require("project_nvim").setup {}
       require('telescope').load_extension('projects')
     end
   }  
@@ -78,11 +74,7 @@ return require('packer').startup(function()
     "folke/trouble.nvim",
     requires = "kyazdani42/nvim-web-devicons",
     config = function()
-      require("trouble").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
+      require("trouble").setup {}
     end
   }
 
@@ -144,34 +136,4 @@ return require('packer').startup(function()
 
   -- Text alignment
   use 'godlygeek/tabular'
-
-  --[[
-
-  -- Async linting & make framework
-  use 'benekastah/neomake'
-
-  -- Auto close brackets, quotes & structures
-  use 'tmsvg/pear-tree'
-  use 'tpope/vim-endwise'
-
-  -- ctags integration
-  use 'majutsushi/tagbar'
-  use 'ludovicchabant/vim-gutentags'
-
-  -- Ruby/Puppet Plugins
-  use 'cornet/vim-puppet'
-
-  -- Terraform
-  -- This isn't really a plugin just a collection of snipmate snippets.
-  -- Ultisnip will load snipmate snippets only if they are in a directory
-  -- called 'snippets' of a plugin.
-  -- use 'juliosueiras/vim-terraform-snippets', {
-  --   \ 'as': 'vim-terraform-snippets-dummy-plugin',
-  --   \ 'dir': '~/.config/nvim/plugged/vim-terraform-snippets/snippets',
-  --   \ 'on': [],
-  --   \ }
-  -- use '~/.config/nvim/plugged/vim-terraform-snippets'
-
-  -- use 'cornet/my-vim-snippets'
---]]
 end)
