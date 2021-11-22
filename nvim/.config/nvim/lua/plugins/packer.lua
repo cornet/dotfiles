@@ -7,8 +7,14 @@ return require('packer').startup(function()
   use 'folke/tokyonight.nvim'
 
   -- Interface Plugins
-  use 'vim-airline/vim-airline'
-  use 'vim-airline/vim-airline-themes'
+  use {
+    'nvim-lualine/lualine.nvim',
+    config = function() require('lualine').setup{
+      options = {
+        theme = 'onedark'
+      }
+    } end
+  }
 
   -- Use tab bar for displaying buffers
   use {
