@@ -16,6 +16,8 @@ return require('packer').startup(function()
     config = function() require('bufferline').setup{} end
   }
 
+  use "lukas-reineke/indent-blankline.nvim"
+
   -- vim-tmux-navigator
   use 'christoomey/vim-tmux-navigator'
 

@@ -1,4 +1,8 @@
-local nvim_lsp = require('lspconfig')
+local present, nvim_lsp = pcall(require, "lspconfig")
+
+if not present then
+  return
+end
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -39,14 +43,14 @@ local on_attach = function(client, bufnr)
   })
 end
 
-require'lspconfig'.terraformls.setup{
+nvim_lsp.terraformls.setup{
   on_attach = on_attach,
   flags = {
     debounce_text_changes = 150,
   },
 }
 
-require'lspconfig'.solargraph.setup{
+nvim_lsp.solargraph.setup{
   on_attach = on_attach,
   flags = {
     debounce_text_changes = 150,
