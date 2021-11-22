@@ -57,6 +57,11 @@ return require('packer').startup(function()
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'nvim-treesitter/playground'
 
+  use {
+    'windwp/nvim-autopairs',
+    config = function() require('nvim-autopairs').setup{} end
+  }
+
   -- Search & display in quickfix
   use {
     'mileszs/ack.vim',
