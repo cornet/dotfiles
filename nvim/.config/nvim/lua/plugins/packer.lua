@@ -1,12 +1,13 @@
 return require('packer').startup(function()
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
-
+  --
+  -- Interface Plugins
+  --
   -- Colourschems
   use 'chriskempson/base16-vim'
   use 'folke/tokyonight.nvim'
-
-  -- Interface Plugins
+  -- Status Line
   use {
     'nvim-lualine/lualine.nvim',
     config = function() require('lualine').setup{
@@ -15,18 +16,17 @@ return require('packer').startup(function()
       }
     } end
   }
-
   -- Use tab bar for displaying buffers
   use {
     'akinsho/bufferline.nvim',
     config = function() require('bufferline').setup{} end
   }
-
+  -- Vertical lines marking indentation
   use "lukas-reineke/indent-blankline.nvim"
 
-  -- vim-tmux-navigator
+  -- Move consistently between windows in Tmux & Vim
   use 'christoomey/vim-tmux-navigator'
-
+  -- Show help for key bindings
   use {
     "folke/which-key.nvim",
     config = function() require("which-key").setup{} end
@@ -52,28 +52,43 @@ return require('packer').startup(function()
     }
     end
   }
-
-  -- Telescope
-  use {
-    'nvim-telescope/telescope.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} }
-  }
-
-  -- TreeSitter
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-  use 'nvim-treesitter/playground'
-
+  --
+  -- General editing utilities
+  --
+  -- Auto complete brackets etc..
   use {
     'windwp/nvim-autopairs',
     config = function() require('nvim-autopairs').setup{} end
   }
-
+  -- Easy align text
+  use 'godlygeek/tabular'
   -- Search & display in quickfix
   use {
     'mileszs/ack.vim',
     config = [[vim.g.ackprg = 'rg --vimgrep']]
   }
+  -- Completion Menu
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
+  use 'hrsh7th/nvim-cmp'
+  --
+  -- Telescope
+  --
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
+  --
+  -- TreeSitter
+  --
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  use 'nvim-treesitter/playground'
 
+  --
+  -- Project & Session Management
+  --
   use {
     "ahmedkhalf/project.nvim",
     config = function()
@@ -81,7 +96,9 @@ return require('packer').startup(function()
       require('telescope').load_extension('projects')
     end
   }  
+  --
   -- Language Server Client
+  --
   use 'neovim/nvim-lspconfig'
   use {
     "folke/trouble.nvim",
@@ -90,7 +107,6 @@ return require('packer').startup(function()
       require("trouble").setup {}
     end
   }
-
   -- LSP Symbols Bar
   use {
     'simrat39/symbols-outline.nvim',
@@ -100,14 +116,9 @@ return require('packer').startup(function()
     }
     ]]
   }
-
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/cmp-path'
-  use 'hrsh7th/cmp-cmdline'
-  use 'hrsh7th/nvim-cmp'
-
+  --
   -- Snippets
+  --
   use {
     "L3MON4D3/LuaSnip",
     wants = "friendly-snippets",
@@ -118,7 +129,9 @@ return require('packer').startup(function()
   use "saadparwaiz1/cmp_luasnip"
   use "rafamadriz/friendly-snippets"
 
+  --
   -- Git integration
+  --
   use 'tpope/vim-fugitive'
   use {
     'lewis6991/gitsigns.nvim',
@@ -131,22 +144,21 @@ return require('packer').startup(function()
   }
   use 'tpope/vim-rhubarb'
 
-  -- Language helpers
+  --
+  -- Language specific
+  --
   use { 'fatih/vim-go', run = ':GoUpdateBinaries' }
   use {
     'hashivim/vim-terraform',
     config = [[vim.g.terraform_fmt_on_save = 1]]
   }
-
   use {
     'vim-ruby/vim-ruby',
     requires = {{'kana/vim-textobj-user'},{'nelstrom/vim-textobj-rubyblock'}}
   }
-
+  --
   -- Vimwiki!
+  --
   use 'vimwiki/vimwiki'
   use 'mattn/calendar-vim'
-
-  -- Text alignment
-  use 'godlygeek/tabular'
 end)
