@@ -116,6 +116,7 @@ return require('packer').startup(function()
     }
     ]]
   }
+  use 'mfussenegger/nvim-lint'
   --
   -- Snippets
   --
