@@ -11,9 +11,9 @@ lint.linters.tflint = {
   stream = 'stdout',
   ignore_exitcode = false,
   env = nil,
-  parser = require('lint.parser').from_errorformat('%f:%l:%c: %m', {
+  -- main.tf:3:19: Error - "t1.2xlarge" is an invalid value as instance_type (aws_instance_invalid_type)
+  parser = require('lint.parser').from_errorformat('%f:%l:%c: %t%*[a-z] - %m', {
     source = 'tflint',
-    severity = vim.lsp.protocol.DiagnosticSeverity.Information
   })
 }
 
