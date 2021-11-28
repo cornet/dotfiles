@@ -36,6 +36,17 @@ local on_attach = function(client, bufnr)
   buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 end
 
+-- replace the default lsp diagnostic symbols
+local function lspSymbol(name, icon)
+   vim.fn.sign_define("LspDiagnosticsSign" .. name, { text = icon, numhl = "LspDiagnosticsDefault" .. name })
+end
+
+lspSymbol("Error", "")
+lspSymbol("Information", "")
+lspSymbol("Hint", "")
+lspSymbol("Warning", "")
+
+
 vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
   virtual_text = false,
 

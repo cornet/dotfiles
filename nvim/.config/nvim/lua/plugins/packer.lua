@@ -102,7 +102,7 @@ return require('packer').startup(function()
   use 'neovim/nvim-lspconfig'
   use {
     "folke/trouble.nvim",
-    requires = "kyazdani42/nvim-web-devicons",
+    requires = { "kyazdani42/nvim-web-devicons", 'folke/lsp-colors.nvim'},
     config = function()
       require("trouble").setup {}
     end
