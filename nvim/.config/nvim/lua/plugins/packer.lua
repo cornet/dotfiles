@@ -65,7 +65,10 @@ return require('packer').startup(function()
   -- Search & display in quickfix
   use {
     'mileszs/ack.vim',
-    config = [[vim.g.ackprg = 'rg --vimgrep']]
+    config = [[
+    vim.g.ackprg = 'rg --vimgrep'
+    vim.g.ack_qhandler = 'TroubleToggle quickfix'
+    ]]
   }
   -- Completion Menu
   use 'hrsh7th/cmp-nvim-lsp'
