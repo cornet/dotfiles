@@ -18,7 +18,8 @@ lint.linters.tflint = {
 }
 
 lint.linters_by_ft = {
-  terraform = {'tflint'}
+  terraform = {'tflint'},
+  sh = {'shellcheck'}
 }
 
 vim.cmd([[
