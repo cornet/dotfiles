@@ -23,5 +23,5 @@ lint.linters_by_ft = {
 }
 
 vim.cmd([[
-au BufWritePost <buffer> lua require('lint').try_lint()
+au BufWritePost * lua require('lint').try_lint()
 ]])
