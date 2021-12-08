@@ -110,6 +110,7 @@ return require('packer').startup(function()
       require("trouble").setup {}
     end
   }
+
   -- LSP Symbols Bar
   use {
     'simrat39/symbols-outline.nvim',
