@@ -11,3 +11,6 @@ export AWS_VAULT_KEYCHAIN_NAME=login
 
 # Use Ruby 2.7 by default
 chruby 2.7
+
+# zk
+export ZK_NOTEBOOK_DIR="$HOME/Documents/notes"
