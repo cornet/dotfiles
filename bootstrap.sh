@@ -2,9 +2,9 @@
 
 install_pkg() {
   pkg=${1}
-  if ! dpkg -s ${pkg} > /dev/null 2>&1; then
+  if ! dpkg -s "$pkg" > /dev/null 2>&1; then
     echo "${pkg} not installed"
-    sudo apt install -y ${pkg}
+    sudo apt install -y "$pkg"
   fi
 }
 
@@ -21,6 +21,7 @@ if [ "$(uname -s)" == "Linux" ]; then
   # neovim deps
   install_pkg exuberant-ctags 
   install_pkg python3-pip
+  install_pkg shellcheck
 
   # Install neovim
   if [ ! -f ~/Apps/nvim.appimage ]; then
