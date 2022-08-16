@@ -1,5 +1,6 @@
 local present, cmp = pcall(require, "cmp")
 
+
 if not present then
   return
 end
@@ -17,7 +18,7 @@ cmp.setup({
       require'luasnip'.lsp_expand(args.body)
     end,
   },
-  mapping = {
+  mapping = cmp.mapping.preset.insert({
     ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
     ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
     ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
@@ -49,7 +50,7 @@ cmp.setup({
         fallback()
       end
     end, { "i", "s" }),
-  },
+  }),
 
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
