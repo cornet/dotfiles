@@ -1,4 +1,5 @@
 # zmodload zsh/zprof
+PATH=/opt/homebrew/bin:$PATH
 source <(antibody init)
 
 # Tell oh-my-zsh where it lives

@@ -1,6 +1,6 @@
-require('settings')
 require('keymappings')
 require('plugins/packer')
+require('settings')
 
 require('plugins/nvim-cmp')
 require('plugins/lsp-config')
