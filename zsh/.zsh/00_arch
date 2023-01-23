@@ -1,0 +1,5 @@
+if [ -f /etc/arch-release ]; then
+  alias ruby-install="ruby-install --rubies-dir ~/.arch/rubies"
+  unset RUBIES
+  export RUBIES="~/.arch.rubies"
+fi
