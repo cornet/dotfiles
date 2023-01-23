@@ -5,8 +5,16 @@ if not present then
 end
 
 ts_config.setup {
-  ensure_installed = { },
-  auto_install = true,-- Install all "maintained" parsers
+  ensure_installed = {
+    "bash",
+    "dockerfile",
+    "go",
+    "hcl",
+    "json",
+    "lua",
+    "ruby",
+    "yaml" 
+  },
   highlight = {
     enable = true,  -- Enable syntax highlighting for everything
   },

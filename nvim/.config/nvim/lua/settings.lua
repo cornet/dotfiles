@@ -46,11 +46,11 @@ vim.opt.softtabstop = 2
 vim.opt.expandtab = true
 
 -- Set colour scheme
-vim.cmd([[
-colorscheme base16-onedark
-let base16colorspace=256
-]])
--- vim.cmd[[colorscheme tokyonight]]
+-- vim.cmd([[
+-- colorscheme base16-onedark
+-- let base16colorspace=256
+-- ]])
+ vim.cmd[[colorscheme catppuccin-frappe]]
 
 -- Filetype options
 vim.cmd([[

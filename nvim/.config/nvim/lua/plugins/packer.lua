@@ -7,12 +7,14 @@ return require('packer').startup(function()
   -- Colourschems
   use 'chriskempson/base16-vim'
   use 'folke/tokyonight.nvim'
+  use { "catppuccin/nvim", as = "catppuccin" }
+
   -- Status Line
   use {
     'nvim-lualine/lualine.nvim',
     config = function() require('lualine').setup{
       options = {
-        theme = 'onedark'
+        theme = 'catppuccin'
       }
     } end
   }
