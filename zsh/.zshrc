@@ -12,8 +12,8 @@ robbyrussell/oh-my-zsh path:plugins/fzf
 robbyrussell/oh-my-zsh path:plugins/chruby
 "
 antibody bundle zsh-users/zsh-completions
-
 antibody bundle wfxr/forgit
+antibody bundle jeffreytse/zsh-vi-mode
 
 # Handy functions
 is_osx() {
