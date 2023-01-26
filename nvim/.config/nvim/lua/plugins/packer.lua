@@ -168,5 +168,4 @@ return require('packer').startup(function()
   --
   use 'vimwiki/vimwiki'
   use 'mattn/calendar-vim'
-
 end)
