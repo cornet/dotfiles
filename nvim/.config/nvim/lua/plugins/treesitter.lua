@@ -12,6 +12,7 @@ ts_config.setup {
     "hcl",
     "json",
     "lua",
+    "markdown",
     "ruby",
     "yaml" 
   },
