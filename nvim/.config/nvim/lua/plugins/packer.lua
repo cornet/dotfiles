@@ -188,6 +188,6 @@ use {
   --
   -- Vimwiki!
   --
-  use 'vimwiki/vimwiki'
-  use 'mattn/calendar-vim'
+  use 'lervag/wiki.vim'
+
 end)
