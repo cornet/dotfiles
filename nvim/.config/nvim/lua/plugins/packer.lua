@@ -188,6 +188,7 @@ use {
   --
   -- Vimwiki!
   --
+  use 'itchyny/calendar.vim'
   use 'lervag/wiki.vim'
 
 end)

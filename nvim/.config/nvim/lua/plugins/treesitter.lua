@@ -14,6 +14,7 @@ ts_config.setup {
     "lua",
     "markdown",
     "ruby",
+    "sql",
     "yaml" 
   },
   highlight = {

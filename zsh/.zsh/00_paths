@@ -6,7 +6,8 @@ export PATH=~/bin:/usr/local/bin:/usr/local/sbin:$PATH
 # Homebrew Paths
 export PATH="/opt/homebrew/opt/mysql@5.7/bin:$PATH"
 export PATH="/opt/homebrew/opt/python/libexec/bin:$PATH"
-export PATH="/Users/nathanhoward/Library/Python/3.8/bin:$PATH"
+# export PATH="/Users/nathanhoward/Library/Python/3.8/bin:$PATH"
+export PATH="/Users/nathanhoward/Library/Python/3.9/bin:$PATH"
 export PATH="/opt/homebrew/opt/libxml2/bin:$PATH"
 export PATH=$PATH:~/node_modules/.bin
 

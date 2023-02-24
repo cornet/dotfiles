@@ -10,6 +10,7 @@ vim.g.wiki_journal = {
   }
 }
 
+
 vim.cmd([[
     function! IsJournalEntry(context)
       if a:context.path_wiki =~ "Journal\/[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]"
@@ -20,6 +21,13 @@ vim.cmd([[
 
     let g:wiki_templates = [
           \ { 'match_func': function('IsJournalEntry'),
-          \   'source_filename': '/home/nathan/tmp/foo.md'}
+          \   'source_filename': '~/Documents/notes/templates/journal.md'}
           \]
+    augroup init_calendar
+      autocmd!
+      autocmd FileType calendar
+          \ nnoremap <silent><buffer> <cr>
+          \ :<c-u>call wiki#journal#open()<cr>
+  augroup END
+
 ]])
