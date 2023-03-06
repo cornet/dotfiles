@@ -71,6 +71,12 @@ return require('packer').startup(function()
     vim.g.ack_qhandler = 'TroubleToggle quickfix'
     ]]
   }
+
+use {
+  "gbprod/yanky.nvim",
+  config = function() require('yanky').setup{} end
+}
+
   -- Completion Menu
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
