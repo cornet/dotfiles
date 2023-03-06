@@ -69,4 +69,13 @@ lsp.setup_nvim_cmp({
   })
 })
 
+
+lsp.configure('terraformls', {
+  init_options = {
+      experimentalFeatures = {
+        prefillRequiredFields = true
+      }
+  }
+})
+
 lsp.setup()
