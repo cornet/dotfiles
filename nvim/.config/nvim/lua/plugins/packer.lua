@@ -77,6 +77,22 @@ use {
   config = function() require('yanky').setup{} end
 }
 
+use({
+  "gbprod/substitute.nvim",
+  requires = {
+    {'gbprod/yanky.nvim'}
+  },
+  config = function()
+    require("substitute").setup({
+      on_substitute = require("yanky.integration").substitute()
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    })
+  end
+})
+
+
   -- Completion Menu
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
@@ -144,11 +160,9 @@ use {
   -- LSP Symbols Bar
   use {
     'simrat39/symbols-outline.nvim',
-    config = [[
-    vim.g.symbols_outline = {
-      auto_preview = false
-    }
-    ]]
+    config = function()
+      require('symbols-outline').setup()
+    end
   }
   use 'mfussenegger/nvim-lint'
   --
