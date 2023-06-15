@@ -10,13 +10,6 @@ map('', '<leader>gb', ':GBrowse<cr>',  default_opts)
 map('', '<leader>ga', ':Git add %:p<cr><cr>',  default_opts)
 map('', '<leader>gc', ':G commit -v -q<cr>',  default_opts)
 
-map('n', '<leader>xx', '<cmd>Trouble<cr>', default_opts)
-map('n', '<leader>xw', '<cmd>Trouble workspace_diagnostics<cr>', default_opts)
-map('n', '<leader>xd', '<cmd>Trouble document_diagnostics<cr>', default_opts)
-map('n', '<leader>xl', '<cmd>Trouble loclist<cr>', default_opts)
-map('n', '<leader>xq', '<cmd>Trouble quickfix<cr>', default_opts)
-map('n', 'gR', '<cmd>Trouble lsp_references<cr>', default_opts)
-
 map('n', '<leader>sb', '<cmd>SymbolsOutline<cr>', default_opts)
 
 vim.keymap.set({"n","x"}, "p", "<Plug>(YankyPutAfter)")

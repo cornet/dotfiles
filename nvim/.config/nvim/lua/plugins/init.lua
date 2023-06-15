@@ -27,5 +27,8 @@ return {
       require('nvim-treesitter.configs').setup(opts)
     end,
   },
-  'nvim-treesitter/playground',
+  {
+    'nvim-treesitter/playground',
+    cmd = 'TSPlaygroundToggle',
+  },
 }
