@@ -36,26 +36,38 @@ return {
 
   -- File explorer
   {
-    'kyazdani42/nvim-tree.lua',
-    dependencies = 'kyazdani42/nvim-web-devicons',
-    keys = {
-      {'<leader>ne', '<cmd>NvimTreeToggle<cr>', {desc = 'nvim-tree', noremap = true, silent = true}},
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
     },
-    opts = {
-      update_cwd = true,
-
-      update_focused_file = {
-        enable = true,
-        update_cwd = true
-      },
-
-      disable_netrw = false,
-
-      filters = {
-        dotfiles = true,
-        custom = {}
-      },
-    }
+    keys = {
+      {'<leader>ne', '<cmd>Neotree toggle<cr>', {desc = 'nvim-tree', noremap = true, silent = true}},
+    },
+    config = function ()
+      require("neo-tree").setup({
+        filesystem = {
+          find_command = "fd",
+          find_args = {
+            fd = {
+              "--exclude",
+              ".git",
+              "--exclude",
+              "node_modules",
+            },
+          }
+        },
+        window = {
+          mappings = {
+            ['e'] = function() vim.api.nvim_exec('Neotree focus filesystem left', true) end,
+            ['b'] = function() vim.api.nvim_exec('Neotree focus buffers left', true) end,
+            ['g'] = function() vim.api.nvim_exec('Neotree focus git_status left', true) end,
+          },
+        },
+      })
+    end
   },
 
   -- Diagnostic Viewer
@@ -70,7 +82,7 @@ return {
       { "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", desc = "Quickfix List (Trouble)" },
       { "gR", "<cmd>Trouble lsp_references", desc = "LSP References (Trouble)"},
     },
-    dependencies = { 'kyazdani42/nvim-web-devicons', 'folke/lsp-colors.nvim'},
+    dependencies = { 'nvim-tree/nvim-web-devicons', 'folke/lsp-colors.nvim'},
     config = true
   },
  }
