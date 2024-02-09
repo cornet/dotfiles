@@ -29,10 +29,15 @@ return {
   'christoomey/vim-tmux-navigator',
 
   -- Show help for key bindings
-  {
-    'folke/which-key.nvim',
-    config = true
-  },
+   {
+     'folke/which-key.nvim',
+     event = "VeryLazy",
+     init = function()
+       vim.o.timeout = true
+       vim.o.timeoutlen = 300
+     end,
+     opts = {}
+   },
 
   -- File explorer
   {
@@ -100,7 +105,7 @@ return {
     keys = {
       { "<leader>xx", "<cmd>TroubleToggle<cr>", desc = "Trouble" },
       { "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Workspace Diagnostics (Trouble)" },
-      { "<leader>xd", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Document Diagnostics (Trouble)" },
+      { "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>", desc = "Document Diagnostics (Trouble)" },
       { "<leader>xl", "<cmd>TroubleToggle loclist<cr>", desc = "Location List (Trouble)" },
       { "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", desc = "Quickfix List (Trouble)" },
       { "gR", "<cmd>Trouble lsp_references", desc = "LSP References (Trouble)"},

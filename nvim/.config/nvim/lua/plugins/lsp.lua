@@ -1,9 +1,11 @@
 return {
   {
     'VonHeikemen/lsp-zero.nvim',
-    branch = "dev-v3",
+    branch = "v3.x",
+    -- lazy = true,
+    -- config = false,
     dependencies = {
-      -- LSP Support
+      -- LSP Suppor
       'neovim/nvim-lspconfig',
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',

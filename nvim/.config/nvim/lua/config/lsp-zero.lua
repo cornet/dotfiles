@@ -10,16 +10,14 @@ end
 lsp.on_attach(function(client, bufnr)
   -- see :help lsp-zero-keybindings
   -- to learn the available actions
-  lsp.default_keymaps({buffer = bufnr})
+  lsp.default_keymaps({
+    buffer = bufnr,
+    preserve_mappings = false
+  })
 end)
 
 
 require('lspconfig').terraformls.setup({
-  init_options = {
-      experimentalFeatures = {
-        prefillRequiredFields = true
-      }
-  }
 })
 
 lsp.set_sign_icons({
@@ -29,7 +27,7 @@ lsp.set_sign_icons({
   info = ""
 })
 
-lsp.setup()
+-- lsp.setup()
 
 -- Manage language servers via Mason
 require('mason').setup({})

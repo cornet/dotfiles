@@ -22,7 +22,8 @@ if is_osx; then
 fi
 
 # Use Ruby 3.1 by default
-chruby 3.1
+# chruby 3.1
+eval "$(mise activate zsh)"
 
 # zk
 export ZK_NOTEBOOK_DIR="$HOME/Documents/notes"

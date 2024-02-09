@@ -58,3 +58,11 @@ au FileType ruby  setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 au FileType eruby setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 au FileType perl  setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 ]])
+
+
+-- Highlight entire line for errors
+-- Highlight the line number for warnings
+vim.diagnostic.config({
+    virtual_text = false,
+    underline = false,
+})
