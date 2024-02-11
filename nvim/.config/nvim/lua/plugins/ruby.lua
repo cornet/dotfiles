@@ -14,6 +14,7 @@ return {
     opts = function(_, opts)
       vim.list_extend(opts.ensure_installed, {
         "ruby-lsp",
+        "rubocop",
       })
     end,
   },
@@ -45,13 +46,13 @@ return {
       adapters = {
         ["neotest-rspec"] = {
           -- NOTE: By default neotest-rspec uses the system wide rspec gem instead of the one through bundler
-          -- rspec_cmd = function()
-          --   return vim.tbl_flatten({
-          --     "bundle",
-          --     "exec",
-          --     "rspec",
-          --   })
-          -- end,
+          rspec_cmd = function()
+            return vim.tbl_flatten({
+              "bundle",
+              "exec",
+              "rspec",
+            })
+          end,
         },
       },
     },
