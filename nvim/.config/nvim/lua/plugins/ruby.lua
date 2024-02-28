@@ -10,6 +10,19 @@ return {
     end,
   },
   {
+    "RRethy/nvim-treesitter-endwise",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function()
+      require("nvim-treesitter.configs").setup({
+        endwise = {
+          enable = true,
+        },
+      })
+    end,
+  },
+  {
     "williamboman/mason.nvim",
     opts = function(_, opts)
       vim.list_extend(opts.ensure_installed, {
