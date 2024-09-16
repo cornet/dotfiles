@@ -35,7 +35,10 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        ruby_ls = {},
+        ruby_lsp = {
+          mason = false,
+          cmd = { "/Users/nathanhoward/.local/share/mise/shims/ruby-lsp" },
+        },
       },
     },
   },

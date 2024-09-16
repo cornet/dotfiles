@@ -1,4 +1,4 @@
-# zmodload zsh/zprof
+zmodload zsh/zprof
 PATH=/opt/homebrew/bin:$PATH
 source <(antibody init)
 
