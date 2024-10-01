@@ -4,6 +4,7 @@ return {
     opts = {
       formatters_by_ft = {
         hcl = { "terragrunt_hclfmt" },
+        python = { "autopep8" },
       },
       formatters = {
         shfmt = {
