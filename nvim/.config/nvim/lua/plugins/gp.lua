@@ -7,7 +7,7 @@ return {
         openai = {},
         anthropic = {
           endpoint = "https://api.anthropic.com/v1/messages",
-          secret = { "cat", "/Users/nathanhoward/.config/gpts/anthropic.key" },
+          secret = { "cat", os.getenv("HOME") .. "/.config/gpts/anthropic.key" },
         },
       },
     }

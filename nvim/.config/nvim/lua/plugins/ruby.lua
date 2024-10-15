@@ -37,7 +37,7 @@ return {
       servers = {
         ruby_lsp = {
           mason = false,
-          cmd = { "/Users/nathanhoward/.local/share/mise/shims/ruby-lsp" },
+          cmd = { os.getenv("HOME") .. "/.local/share/mise/shims/ruby-lsp" },
         },
       },
     },
