@@ -74,3 +74,6 @@
 
 [includeIf "hasconfig:remote.*.url:git@github.com:fac/**"]
 	path = work.local
+[url "https://github.com/"]
+	insteadOf = git@github.com:
+	insteadOf = ssh://git@github.com/

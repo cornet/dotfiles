@@ -9,7 +9,6 @@ ZSH="$(antibody home)/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SL
 antibody bundle "
 robbyrussell/oh-my-zsh
 robbyrussell/oh-my-zsh path:plugins/fzf
-robbyrussell/oh-my-zsh path:plugins/chruby
 "
 antibody bundle zsh-users/zsh-completions
 antibody bundle wfxr/forgit
