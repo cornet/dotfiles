@@ -68,4 +68,23 @@ return {
       })
     end,
   },
+  {
+    "saghen/blink.cmp",
+    opts = {
+      keymap = {
+        preset = "enter",
+      },
+      completion = {
+        trigger = {
+          show_in_snippet = false,
+        },
+
+        list = {
+          selection = {
+            preselect = false,
+          },
+        },
+      },
+    },
+  },
 }
