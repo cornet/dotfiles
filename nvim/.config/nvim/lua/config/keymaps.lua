@@ -4,9 +4,4 @@
 local map = vim.api.nvim_set_keymap
 local default_opts = { noremap = true, silent = true }
 
--- map("", "<leader>gd", ":Gvdiffsplit<cr>", default_opts)
 map("", "<leader>gs", ":Neogit kind=auto<cr>", default_opts)
--- map("", "<leader>gl", ":Gclog<cr>", default_opts)
--- map("", "<leader>gb", ":GBrowse<cr>", default_opts)
--- map("", "<leader>ga", ":Git add %:p<cr><cr>", default_opts)
--- map("", "<leader>gc", ":G commit -v -q<cr>", default_opts)
