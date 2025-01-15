@@ -11,86 +11,84 @@
 -- end
 -- end)
 
-local hyper = require('hyper')
-hyper.install('F18') 
-hyper.bindKeyWithModifiers({"alt", "shift"}, 'r', hs.reload)
+local hyper = require("hyper")
+hyper.install("F18")
+hyper.bindKeyWithModifiers({ "alt", "shift" }, "r", hs.reload)
 
 -- hs.hotkey.bind({"alt", "shift"}, "return", function()
 -- 	hs.execute("open -na kitty")
 -- end)
 
-hyper.bindKeyWithModifiers({"alt", "shift"}, "return", function()
-	hs.execute("open -na kitty")
+hyper.bindKeyWithModifiers({ "alt", "shift" }, "return", function()
+	hs.execute("open -na Ghostty")
 end)
 
 -- Disable Window Animations or it's slooww....
 hs.window.animationDuration = 0
 
-hyper.bindKeyWithModifiers({"alt", "shift"}, "f", function()
-  hs.execute('/opt/homebrew/bin/yabai -m window --toggle zoom-fullscreen')
+hyper.bindKeyWithModifiers({ "alt", "shift" }, "f", function()
+	hs.execute("/opt/homebrew/bin/yabai -m window --toggle zoom-fullscreen")
 end)
 
-hyper.bindKeyWithModifiers({"alt", "shift"}, "space", function()
-  hs.execute('/opt/homebrew/bin/yabai -m window --toggle float')
+hyper.bindKeyWithModifiers({ "alt", "shift" }, "space", function()
+	hs.execute("/opt/homebrew/bin/yabai -m window --toggle float")
 end)
 
-hyper.bindKeyWithModifiers({"alt", "shift"}, ".", function()
-  hs.execute('/opt/homebrew/bin/yabai -m space --rotate 90')
+hyper.bindKeyWithModifiers({ "alt", "shift" }, ".", function()
+	hs.execute("/opt/homebrew/bin/yabai -m space --rotate 90")
 end)
 
-hyper.bindKeyWithModifiers({"alt", "shift"}, ",", function()
-  hs.execute('/opt/homebrew/bin/yabai -m space --rotate 270')
+hyper.bindKeyWithModifiers({ "alt", "shift" }, ",", function()
+	hs.execute("/opt/homebrew/bin/yabai -m space --rotate 270")
 end)
-
 
 -- Focus Windows
-hyper.bindKeyWithModifiers({"alt"}, "k", function()
-  hs.execute('/opt/homebrew/bin/yabai -m window --focus north')
+hyper.bindKeyWithModifiers({ "alt" }, "k", function()
+	hs.execute("/opt/homebrew/bin/yabai -m window --focus north")
 end)
 
-hyper.bindKeyWithModifiers({"alt"}, "j", function()
-  hs.execute('/opt/homebrew/bin/yabai -m window --focus south')
+hyper.bindKeyWithModifiers({ "alt" }, "j", function()
+	hs.execute("/opt/homebrew/bin/yabai -m window --focus south")
 end)
 
-hyper.bindKeyWithModifiers({"alt"}, "l", function()
-  hs.execute('/opt/homebrew/bin/yabai -m window --focus east')
+hyper.bindKeyWithModifiers({ "alt" }, "l", function()
+	hs.execute("/opt/homebrew/bin/yabai -m window --focus east")
 end)
 
-hyper.bindKeyWithModifiers({"alt"}, "h", function()
-  hs.execute('/opt/homebrew/bin/yabai -m window --focus west')
+hyper.bindKeyWithModifiers({ "alt" }, "h", function()
+	hs.execute("/opt/homebrew/bin/yabai -m window --focus west")
 end)
-
 
 -- Swap Windows
-hyper.bindKeyWithModifiers({"alt", "shift"}, "k", function()
-  hs.execute('/opt/homebrew/bin/yabai -m window --swap north')
+hyper.bindKeyWithModifiers({ "alt", "shift" }, "k", function()
+	hs.execute("/opt/homebrew/bin/yabai -m window --swap north")
 end)
 
-hyper.bindKeyWithModifiers({"alt", "shift"}, "j", function()
-  hs.execute('/opt/homebrew/bin/yabai -m window --swap south')
+hyper.bindKeyWithModifiers({ "alt", "shift" }, "j", function()
+	hs.execute("/opt/homebrew/bin/yabai -m window --swap south")
 end)
 
-hyper.bindKeyWithModifiers({"alt", "shift"}, "l", function()
-  hs.execute('/opt/homebrew/bin/yabai -m window --swap east')
+hyper.bindKeyWithModifiers({ "alt", "shift" }, "l", function()
+	hs.execute("/opt/homebrew/bin/yabai -m window --swap east")
 end)
 
-hyper.bindKeyWithModifiers({"alt", "shift"}, "h", function()
-  hs.execute('/opt/homebrew/bin/yabai -m window --swap west')
+hyper.bindKeyWithModifiers({ "alt", "shift" }, "h", function()
+	hs.execute("/opt/homebrew/bin/yabai -m window --swap west")
 end)
 
 -- Warp Windows
-hyper.bindKeyWithModifiers({"cmd", "shift"}, "k", function()
-  hs.execute('/opt/homebrew/bin/yabai -m window --warp north')
+hyper.bindKeyWithModifiers({ "cmd", "shift" }, "k", function()
+	hs.execute("/opt/homebrew/bin/yabai -m window --warp north")
 end)
 
-hyper.bindKeyWithModifiers({"cmd", "shift"}, "j", function()
-  hs.execute('/opt/homebrew/bin/yabai -m window --warp south')
+hyper.bindKeyWithModifiers({ "cmd", "shift" }, "j", function()
+	hs.execute("/opt/homebrew/bin/yabai -m window --warp south")
 end)
 
-hyper.bindKeyWithModifiers({"cmd", "shift"}, "l", function()
-  hs.execute('/opt/homebrew/bin/yabai -m window --warp east')
+hyper.bindKeyWithModifiers({ "cmd", "shift" }, "l", function()
+	hs.execute("/opt/homebrew/bin/yabai -m window --warp east")
 end)
 
-hyper.bindKeyWithModifiers({"cmd", "shift"}, "h", function()
-  hs.execute('/usr/local/bin/yabai -m window --warp west')
+hyper.bindKeyWithModifiers({ "cmd", "shift" }, "h", function()
+	hs.execute("/usr/local/bin/yabai -m window --warp west")
 end)
