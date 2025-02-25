@@ -14,12 +14,14 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.coding.yanky" },
     { import = "lazyvim.plugins.extras.dap.core" },
     { import = "lazyvim.plugins.extras.editor.aerial" },
+    { import = "lazyvim.plugins.extras.editor.snacks_explorer" },
+    { import = "lazyvim.plugins.extras.editor.snacks_picker" },
     { import = "lazyvim.plugins.extras.lang.markdown" },
     { import = "lazyvim.plugins.extras.lang.go" },
     { import = "lazyvim.plugins.extras.lang.ruby" },
     { import = "lazyvim.plugins.extras.lang.terraform" },
-    { import = "lazyvim.plugins.extras.util.project" },
     { import = "lazyvim.plugins.extras.test.core" },
+    { import = "lazyvim.plugins.extras.ai.copilot" },
     -- import/override with your plugins
     { import = "plugins" },
   },
@@ -37,6 +39,13 @@ require("lazy").setup({
     enabled = true, -- check for updates
     frequency = 86400, -- once per day
   },
+  ui = {
+    border = "rounded",
+    size = {
+      width = 0.8,
+      height = 0.8,
+    },
+  },
   performance = {
     rtp = {
       -- disable some rtp plugins
@@ -53,3 +62,5 @@ require("lazy").setup({
     },
   },
 })
+
+vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#8caaee" })
