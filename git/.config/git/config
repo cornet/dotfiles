@@ -22,13 +22,22 @@
 [user]
   name = cornet
   email = cornet@sheepy.org
+
 [commit]
   verbose = true
 	template = /Users/nathanhoward/.gitmessage
+
 [pull]
   rebase = false
+
+[push]
+  autoSetupRemote = true
+
 [branch]
 	sort = -committerdate
+
+[tag]
+  sort = version:refname
 
 [core]
     pager = delta
