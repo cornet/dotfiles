@@ -11,3 +11,5 @@ cmd_exists bat && alias cat=bat
 alias c='noglob perl -e '\''$_="@ARGV";s/\^/**/g;y/x/*/;print eval $_, "\n"'\'''
 
 alias ldk="BUNDLE_GEMFILE=${HOME}/dev/freeagent-devkit/Gemfile bundle exec ${HOME}/dev/freeagent-devkit/bin/devkit"
+
+alias gpr="git push && gh pr create -fd && gh pr view -w"

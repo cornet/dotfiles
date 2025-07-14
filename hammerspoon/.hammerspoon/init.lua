@@ -59,6 +59,24 @@ hyper.bindKeyWithModifiers({ "alt" }, "h", function()
 	hs.execute("/opt/homebrew/bin/yabai -m window --focus west")
 end)
 
+-- Focus Displays
+hyper.bindKeyWithModifiers({ "alt" }, "o", function()
+	hs.execute("/opt/homebrew/bin/yabai -m display --focus east")
+end)
+
+hyper.bindKeyWithModifiers({ "alt" }, "y", function()
+	hs.execute("/opt/homebrew/bin/yabai -m display --focus west")
+end)
+
+-- Focus Spaces
+hyper.bindKeyWithModifiers({ "alt" }, "i", function()
+	hs.execute("/opt/homebrew/bin/yabai -m space --focus next")
+end)
+
+hyper.bindKeyWithModifiers({ "alt" }, "u", function()
+	hs.execute("/opt/homebrew/bin/yabai -m space --focus prev")
+end)
+
 -- Swap Windows
 hyper.bindKeyWithModifiers({ "alt", "shift" }, "k", function()
 	hs.execute("/opt/homebrew/bin/yabai -m window --swap north")
