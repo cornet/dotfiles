@@ -1,9 +1,6 @@
 zmodload zsh/zprof
 PATH=/opt/homebrew/bin:$PATH
 
-source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
-antidote load
-
 # Handy functions
 is_osx() {
   [[ "${OSTYPE}" = darwin* ]]
@@ -12,6 +9,14 @@ is_osx() {
 cmd_exists() {
   (( ${+commands[$1]} ))
 }
+
+if is_osx; then
+  source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
+else
+  source ~/.antidote/antidote.zsh
+fi
+
+antidote load
 
 # Revert ls(1) to default system colours on OS X
 is_osx && unset LSCOLORS
