@@ -4,6 +4,8 @@ PATH=/opt/homebrew/bin:$PATH
 source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
 antidote load
 
+bindkey -v 
+
 # Handy functions
 is_osx() {
   [[ "${OSTYPE}" = darwin* ]]
@@ -36,3 +38,11 @@ if is_osx; then
   # Source automated FreeAgent shell config
   source /Users/nathanhoward/.freeagent_shell_profile
 fi
+
+# Reload fzf or keybindings get removed by zsh-vi-mode :(
+function zvm_after_init() {
+  fzf_plugin="$(antidote path ohmyzsh/ohmyzsh)/plugins/fzf/fzf.plugin.zsh"
+  [ -f "$fzf_plugin" ] && source "$fzf_plugin"
+}
+
+alias shipit="BUNDLE_GEMFILE=/Users/nathanhoward/dev/hackdays-shipit/Gemfile aws-vault exec nathan-dev-full -- bundle exec /Users/nathanhoward/dev/hackdays-shipit/bin/shipit"

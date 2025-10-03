@@ -1,4 +1,4 @@
-jeffreytse/zsh-vi-mode
+# jeffreytse/zsh-vi-mode
 
 getantidote/use-omz        # handle OMZ dependencies
 ohmyzsh/ohmyzsh path:lib   # load OMZ's library
@@ -7,5 +7,5 @@ ohmyzsh/ohmyzsh path:plugins/fzf
 zsh-users/zsh-completions
 wfxr/forgit
 
-zsh-users/zsh-autosuggestions               # Auto-suggestions
+# zsh-users/zsh-autosuggestions               # Auto-suggestions
 zsh-users/zsh-history-substring-search      # Up/Down to search history
