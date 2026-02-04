@@ -19,6 +19,9 @@
 
 	dfst = diff --stat
 
+[diff]
+  external = difft
+
 [user]
   name = cornet
   email = cornet@sheepy.org
@@ -42,8 +45,8 @@
 [core]
     pager = delta
 
-[interactive]
-    diffFilter = delta --color-only --features=interactive
+# [interactive]
+#     diffFilter = delta --color-only --features=interactive
 
 [delta]
     features = catppuccin-frappe
@@ -86,3 +89,5 @@
 [url "https://github.com/"]
 	insteadOf = git@github.com:
 	insteadOf = ssh://git@github.com/
+[init]
+	defaultBranch = main

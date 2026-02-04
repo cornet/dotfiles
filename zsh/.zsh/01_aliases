@@ -20,6 +20,7 @@ function aws_account() {
 
 function tplan() {
   role=${1:-ops}
+  account=$(aws_account)
 
   # Don't attempt to add a terraform lock
   # unless we have full access.
@@ -37,6 +38,7 @@ function tplan() {
 
 function tapply() {
   role=${1:-ops}
+  account=$(aws_account)
 
   command="aws-vault exec $account-$role -- terragrunt apply --source-update"
 
