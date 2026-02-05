@@ -1,18 +1,41 @@
 zmodload zsh/zprof
-PATH=/opt/homebrew/bin:$PATH
-
-bindkey -v 
 
 # Handy functions
-is_osx() {
+function is_osx() {
   [[ "${OSTYPE}" = darwin* ]]
 }
 
-cmd_exists() {
+function cmd_exists() {
   (( ${+commands[$1]} ))
 }
 
-if is_osx; then
+function path_prepend() {
+  if [ -d "$1" ]; then
+    PATH="$1":$PATH
+  fi
+}
+
+function path_append() {
+  if [ -d "$1" ]; then
+    PATH=$PATH:"$1"
+  fi
+}
+
+path_prepend ~/bin
+path_prepend /usr/local/bin
+
+path_prepend /opt/homebrew/bin
+path_prepend /home/linuxbrew/.linuxbrew/bin
+
+path_append /usr/local/sbin
+path_append /usr/sbin
+path_append /sbin
+
+eval "$(brew shellenv)"
+
+bindkey -v 
+
+if command -v brew >/dev/null; then
   source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
 else
   source ~/.antidote/antidote.zsh
@@ -31,8 +54,6 @@ done
 export LESS="-F -X $LESS"
 
 eval "$(starship init zsh)"
-
-PATH=$PATH:/home/nathan/010editor;export PATH; # ADDED BY INSTALLER - DO NOT EDIT OR DELETE THIS COMMENT - 87FF8EFC-483D-BCAA-D67D-735CF60410D1 7B868C8A-7FD6-13EE-B16B-FE7EFF9905DD
 
 if is_osx; then
   export AWS_VAULT_KEYCHAIN_NAME=login

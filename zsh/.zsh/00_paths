@@ -1,25 +1,6 @@
 # vi: ft=zsh
 
-# General Path
-export PATH=~/bin:/usr/local/bin:/usr/local/sbin:$PATH
-
 # Homebrew Paths
-export PATH="/opt/homebrew/opt/mysql@8.0/bin:$PATH"
-export PATH="/opt/homebrew/opt/python/libexec/bin:$PATH"
-# export PATH="/Users/nathanhoward/Library/Python/3.8/bin:$PATH"
-export PATH="/Users/nathanhoward/Library/Python/3.9/bin:$PATH"
-export PATH="/opt/homebrew/opt/libxml2/bin:$PATH"
-export PATH=$PATH:~/node_modules/.bin
-
-# Go Paths
-export PATH=$PATH:/usr/local/go/bin
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
-
-# NVM
-if is_osx; then
-  export NVM_DIR="${HOME}/.nvm"
-  BREW_NVM_DIR="/opt/homebrew/opt/nvm"
-  [ -s "$BREW_NVM_DIR/nvm.sh" ] && . $BREW_NVM_DIR/nvm.sh --no-use
-  export PATH=$PATH:/Users/nathanhoward/.rd/bin
-fi
+path_prepend $HOMBREW_PREFIX/opt/mysql@8.0/bin
+path_prepend $HOMBREW_PREFIX/opt/python/libexec/bin
+path_prepend $HOMBREW_PREFIX/opt/libxml2/bin
