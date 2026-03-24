@@ -19,9 +19,6 @@
 
 	dfst = diff --stat
 
-[diff]
-  external = difft
-
 [user]
   name = cornet
   email = cornet@sheepy.org
