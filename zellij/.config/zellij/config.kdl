@@ -167,7 +167,7 @@ keybinds clear-defaults=true {
         bind "Alt ]" { NextSwapLayout; }
         bind "Alt f" { ToggleFloatingPanes; }
         bind "Ctrl h" {
-            MessagePlugin "file:~/.zellij-plugins/vim-zellij-navigator.wasm" {
+            MessagePlugin "file:~/.config/zellij/plugins/vim-zellij-navigator.wasm" {
                 name "move_focus_or_tab"
                 payload "left"
                 floating false
@@ -176,7 +176,7 @@ keybinds clear-defaults=true {
         bind "Alt h" { MoveFocusOrTab "left"; }
         bind "Alt i" { MoveTab "left"; }
         bind "Ctrl j" {
-            MessagePlugin "file:~/.zellij-plugins/vim-zellij-navigator.wasm" {
+            MessagePlugin "file:~/.config/zellij/plugins/vim-zellij-navigator.wasm" {
                 name "move_focus"
                 payload "down"
                 floating false
@@ -184,7 +184,7 @@ keybinds clear-defaults=true {
         }
         bind "Alt j" { MoveFocus "down"; }
         bind "Ctrl k" {
-            MessagePlugin "file:~/.zellij-plugins/vim-zellij-navigator.wasm" {
+            MessagePlugin "file:~/.config/zellij/plugins/vim-zellij-navigator.wasm" {
                 name "move_focus"
                 payload "up"
                 floating false
@@ -192,7 +192,7 @@ keybinds clear-defaults=true {
         }
         bind "Alt k" { MoveFocus "up"; }
         bind "Ctrl l" {
-            MessagePlugin "file:~/.zellij-plugins/vim-zellij-navigator.wasm" {
+            MessagePlugin "file:~/.config/zellij/plugins/vim-zellij-navigator.wasm" {
                 name "move_focus_or_tab"
                 payload "right"
                 floating false
@@ -561,12 +561,12 @@ show_startup_tips false
 // The ip address the web server should listen on when it starts
 // Default: "127.0.0.1"
 // (Requires restart)
-web_server_ip "127.0.0.1"
+// web_server_ip "127.0.0.1"
  
 // The port the web server should listen on when it starts
 // Default: 8082
 // (Requires restart)
-web_server_port 8082
+// web_server_port 8082
  
 // A command to run (will be wrapped with sh -c and provided the RESURRECT_COMMAND env variable) 
 // after Zellij attempts to discover a command inside a pane when resurrecting sessions, the STDOUT
