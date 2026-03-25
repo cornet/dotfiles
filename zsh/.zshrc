@@ -118,7 +118,10 @@ if [ -f "/Users/nathanhoward/.freeagent_shell_profile" ]; then
   source /Users/nathanhoward/.freeagent_shell_profile
 fi
 
-
+## .freeagent_shell_profile loads mise so lets check before loading
+if [[ -n "$MISE_SHELL"  ]]; then 
+  eval "$(mise activate zsh)"
+fi
 
 eval "$(starship init zsh)"
 
