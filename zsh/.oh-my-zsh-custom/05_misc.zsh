@@ -1,0 +1,38 @@
+# vi: ft=zsh
+
+# Set timeout for aws-vault
+export AWS_ASSUME_ROLE_TTL=1h
+
+# Terraform plugin cache dir
+export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
+
+# aws-vault
+export AWS_VAULT_KEYCHAIN_NAME=login
+
+# Use apple script creds helper
+if is_osx; then
+  export AWS_VAULT_PROMPT=osascript
+  export AWS_SDK_LOAD_CONFIG=1
+fi
+
+# Increase maxfiles and maxprocs from pathetic defaults
+if is_osx; then
+  ulimit -n 200000
+  ulimit -u 2048
+fi
+
+# Use Ruby 3.1 by default
+# chruby 3.1
+# eval "$(mise activate zsh)"
+
+# zk
+export ZK_NOTEBOOK_DIR="$HOME/Documents/notes"
+
+if is_osx; then
+  export TFENV_ARCH="arm64"
+  export TGENV_ARCH="arm64"
+fi
+
+if is_osx; then
+  unset LSCOLORS
+fi

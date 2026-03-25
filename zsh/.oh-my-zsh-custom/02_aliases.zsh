@@ -1,0 +1,47 @@
+# vi: ft=zsh
+#
+# Anti Screw up
+alias cp="cp -i"
+alias mv="mv -i"
+alias rm="rm -i"
+
+cmd_exists bat && alias cat=bat
+
+# Calculator
+alias c='noglob perl -e '\''$_="@ARGV";s/\^/**/g;y/x/*/;print eval $_, "\n"'\'''
+
+alias ldk="BUNDLE_GEMFILE=${HOME}/dev/fac/freeagent-devkit/Gemfile bundle exec ${HOME}/dev/fac/freeagent-devkit/exe/devkit"
+
+alias gpr="git push && gh pr create -fd && gh pr view -w"
+
+function aws_account() {
+  git rev-parse --show-prefix | cut -d/ -f1
+}
+
+function tplan() {
+  role=${1:-ops}
+  account=$(aws_account)
+
+  # Don't attempt to add a terraform lock
+  # unless we have full access.
+  if [ "$role" != "full" ]; then
+    tfparms="-- --lock=false"
+  else
+    tfparms=""
+  fi
+
+  command="aws-vault exec $account-$role -- terragrunt plan --source-update $tfparms"
+
+  echo $command
+  eval $command
+}
+
+function tapply() {
+  role=${1:-ops}
+  account=$(aws_account)
+
+  command="aws-vault exec $account-$role -- terragrunt apply --source-update"
+
+  echo $command
+  eval $command
+}

@@ -1,5 +1,3 @@
-# vim:syntax=zsh
-
 # Git checkout completion
 #   git co ^T
 _fzf_complete_git() {
@@ -70,6 +68,7 @@ tm() {
 }
 
 # Search gopass password manager
+unalias gp
 gp() {
   pass=$(gopass ls -f | fzf +m) &&
 	gopass show -c "$pass"

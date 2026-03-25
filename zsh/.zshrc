@@ -1,74 +1,126 @@
 zmodload zsh/zprof
 
-# Handy functions
-function is_osx() {
-  [[ "${OSTYPE}" = darwin* ]]
-}
+# If you come from bash you might have to change your $PATH.
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-function cmd_exists() {
-  (( ${+commands[$1]} ))
-}
+# Path to your Oh My Zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+export ZSH_CUSTOM="$HOME/.oh-my-zsh-custom"
 
-function path_prepend() {
-  if [ -d "$1" ]; then
-    PATH="$1":$PATH
-  fi
-}
 
-function path_append() {
-  if [ -d "$1" ]; then
-    PATH=$PATH:"$1"
-  fi
-}
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time Oh My Zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="robbyrussell"
 
-path_prepend ~/bin
-path_prepend /usr/local/bin
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in $ZSH/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
-path_prepend /opt/homebrew/bin
-path_prepend /home/linuxbrew/.linuxbrew/bin
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
 
-path_append /usr/local/sbin
-path_append /usr/sbin
-path_append /sbin
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+
+# Uncomment the following line to change how often to auto-update (in days).
+# zstyle ':omz:update' frequency 13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+HIST_STAMPS="yyy-mm-dd"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git fzf)
 
 eval "$(brew shellenv)"
+source $ZSH/oh-my-zsh.sh
 
-bindkey -v 
+# User configuration
 
-if command -v brew >/dev/null; then
-  source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
-else
-  source ~/.antidote/antidote.zsh
-fi
+# export MANPATH="/usr/local/man:$MANPATH"
 
-antidote load
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
 
-# Revert ls(1) to default system colours on OS X
-is_osx && unset LSCOLORS
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='nvim'
+# fi
 
-for file in ~/.zsh/*; do
-  source "${file}"
-done
+# Compilation flags
+# export ARCHFLAGS="-arch $(uname -m)"
 
-# Tells 'less' not to paginate if less than a page
-export LESS="-F -X $LESS"
+# Set personal aliases, overriding those provided by Oh My Zsh libs,
+# plugins, and themes. Aliases can be placed here, though Oh My Zsh
+# users are encouraged to define aliases within a top-level file in
+# the $ZSH_CUSTOM folder, with .zsh extension. Examples:
+# - $ZSH_CUSTOM/aliases.zsh
+# - $ZSH_CUSTOM/macos.zsh
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+# Anti Screw up
+alias cp="cp -i"
+alias mv="mv -i"
+alias rm="rm -i"
+alias vim=nvim
 
-eval "$(starship init zsh)"
-
-if is_osx; then
-  export AWS_VAULT_KEYCHAIN_NAME=login
-  export AWS_VAULT_PROMPT=osascript
-  export AWS_SDK_LOAD_CONFIG=1
-  export OPS_SSO_ENABLED=true
-  
-  # Source automated FreeAgent shell config
+if [ -f "/Users/nathanhoward/.freeagent_shell_profile" ]; then
   source /Users/nathanhoward/.freeagent_shell_profile
 fi
 
-# Reload fzf or keybindings get removed by zsh-vi-mode :(
-function zvm_after_init() {
-  fzf_plugin="$(antidote path ohmyzsh/ohmyzsh)/plugins/fzf/fzf.plugin.zsh"
-  [ -f "$fzf_plugin" ] && source "$fzf_plugin"
-}
 
-alias shipit="BUNDLE_GEMFILE=/Users/nathanhoward/dev/hackdays-shipit/Gemfile aws-vault exec nathan-dev-full -- bundle exec /Users/nathanhoward/dev/hackdays-shipit/bin/shipit"
+
+eval "$(starship init zsh)"
+
+
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
