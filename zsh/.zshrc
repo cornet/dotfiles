@@ -74,7 +74,7 @@ HIST_STAMPS="yyy-mm-dd"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf)
+plugins=(vi-mode fzf forgit)
 
 eval "$(brew shellenv)"
 source $ZSH/oh-my-zsh.sh
