@@ -2,11 +2,11 @@ zmodload zsh/zprof
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_CUSTOM="$HOME/.oh-my-zsh-custom"
-
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
@@ -124,6 +124,5 @@ if [[ -n "$MISE_SHELL"  ]]; then
 fi
 
 eval "$(starship init zsh)"
-
 
 if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
