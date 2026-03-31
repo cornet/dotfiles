@@ -79,6 +79,17 @@ zj() {
   fi
 }
 
+zd() {
+  if [ -n "$ZELLIJ" ]; then
+    zellij action detach
+  fi
+}
+
+ze() {
+  if [ -n "$ZELLIJ" ]; then
+    zellij action edit-scrollback
+  fi
+}
 export FZF_COMPLETION_TRIGGER=''
 bindkey '^T' fzf-completion
 bindkey '^I' $fzf_default_completion
