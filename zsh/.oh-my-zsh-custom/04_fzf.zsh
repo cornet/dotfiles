@@ -13,7 +13,7 @@ _fzf_complete_git() {
 
 # Search gopass password manager
 gp() {
-  pass=$(gopass ls -f | fzf +m) &&
+  pass=$(gopass ls -f | fzf --popup +m) &&
 	gopass show -c "$pass"
 }
 
@@ -37,7 +37,7 @@ _aws_vault_profiles() {
 }
 
 avl() {
-  profile=$(_aws_vault_profiles | fzf) && aws-vault login -a $profile
+  profile=$(_aws_vault_profiles | fzf --popup) && aws-vault login -a $profile
 }
 
 alias ave="aws-vault exec"
@@ -69,7 +69,7 @@ zj() {
   fi
 
   sessions=$(zellij list-sessions --short)
-  selected_session=$(echo "$sessions" | fzf)
+  selected_session=$(echo "$sessions" | fzf --popup)
   if [ -n "$selected_session" ]; then
     if [ -v "$ZELLIJ" ]; then
       zellij action switch-session "$selected_session"

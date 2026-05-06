@@ -10,3 +10,7 @@ vim.g.lazyvim_ruby_lsp = "ruby_lsp"
 vim.g.lazyvim_ruby_formatter = "rubocop"
 
 vim.opt.ignorecase = false
+
+-- Disable modelines for security reasons, as they can execute arbitrary code when opening a file
+-- e.g: CVE-2026-34714
+vim.opt.modelines = 0
