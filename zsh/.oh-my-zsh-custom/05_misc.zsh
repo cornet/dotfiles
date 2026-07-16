@@ -35,4 +35,5 @@ fi
 
 if is_osx; then
   unset LSCOLORS
+  unset LS_COLORS
 fi

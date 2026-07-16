@@ -45,3 +45,11 @@ function tapply() {
   echo $command
   eval $command
 }
+
+alias ls='command lsd'
+alias ll='command lsd --all --header --long'
+alias llm='command lsd --all --header --long --sort time'
+alias la='command lsd -lhiUa --group-directories-first'
+alias lx='command lsd -lhiUSA --group-directories-first --total-size'
+alias lt='command lsd --tree'
+alias tree='command lsd --tree'

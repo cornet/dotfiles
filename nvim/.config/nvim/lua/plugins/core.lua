@@ -13,9 +13,12 @@ return {
       inlay_hints = { enabled = false },
       diagnostics = {
         virtual_text = false,
+        underline = false,
       },
       servers = {
-        terraformls = {},
+        terraformls = {
+          root_markers = { "main.tf", "vars.tf", "variables.tf", "outputs.tf", "versions.tf" },
+        },
       },
       setup = {
         terraformls = function(_, opts)
