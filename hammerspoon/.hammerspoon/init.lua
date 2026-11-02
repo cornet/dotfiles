@@ -95,18 +95,19 @@ hyper.bindKeyWithModifiers({ "alt", "shift" }, "h", function()
 end)
 
 -- Warp Windows
-hyper.bindKeyWithModifiers({ "cmd", "shift" }, "k", function()
-	hs.execute("/opt/homebrew/bin/yabai -m window --warp north")
-end)
-
-hyper.bindKeyWithModifiers({ "cmd", "shift" }, "j", function()
-	hs.execute("/opt/homebrew/bin/yabai -m window --warp south")
-end)
-
-hyper.bindKeyWithModifiers({ "cmd", "shift" }, "l", function()
-	hs.execute("/opt/homebrew/bin/yabai -m window --warp east")
-end)
-
-hyper.bindKeyWithModifiers({ "cmd", "shift" }, "h", function()
-	hs.execute("/usr/local/bin/yabai -m window --warp west")
-end)
+-- hyper.bindKeyWithModifiers({ "cmd", "shift" }, "k", function()
+-- 	hs.execute("/opt/homebrew/bin/yabai -m window --warp north")
+-- end)
+--
+-- hyper.bindKeyWithModifiers({ "cmd", "shift" }, "j", function()
+-- 	hs.execute("/opt/homebrew/bin/yabai -m window --warp south")
+-- end)
+--
+-- hyper.bindKeyWithModifiers({ "cmd", "shift" }, "l", function()
+-- 	hs.execute("/opt/homebrew/bin/yabai -m window --warp east")
+-- end)
+--
+-- hyper.bindKeyWithModifiers({ "cmd", "shift" }, "h", function()
+-- 	hs.execute("/usr/local/bin/yabai -m window --warp west")
+-- end)
+hs.loadSpoon("ControlEscape"):start() -- Load Hammerspoon bits from https://github.com/jasonrudolph/ControlEscape.spoon

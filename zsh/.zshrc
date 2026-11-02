@@ -74,7 +74,7 @@ HIST_STAMPS="yyy-mm-dd"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(vi-mode fzf forgit)
+plugins=(vi-mode fzf)
 
 eval "$(brew shellenv)"
 source $ZSH/oh-my-zsh.sh
@@ -114,8 +114,8 @@ alias mv="mv -i"
 alias rm="rm -i"
 alias vim=nvim
 
-if [ -f "/Users/nathanhoward/.freeagent_shell_profile" ]; then
-  source /Users/nathanhoward/.freeagent_shell_profile
+if [ -f "/Users/nathan/.freeagent_shell_profile" ]; then
+  source /Users/nathan/.freeagent_shell_profile
 fi
 
 ## .freeagent_shell_profile loads mise so lets check before loading
@@ -124,5 +124,7 @@ if [[ -n "$MISE_SHELL"  ]]; then
 fi
 
 eval "$(starship init zsh)"
+
+[ -f $HOMEBREW_PREFIX/share/forgit/forgit.plugin.zsh ] && source $HOMEBREW_PREFIX/share/forgit/forgit.plugin.zsh
 
 if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi

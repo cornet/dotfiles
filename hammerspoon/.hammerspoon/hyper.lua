@@ -10,9 +10,9 @@ local This = {}
 
 -- To use Hyper in your init.lua script, import it and adapt this example to
 -- your needs:
--- 
+--
 -- local hyper = require('hyper')
--- hyper.install('F18') 
+-- hyper.install('F18')
 -- hyper.bindkey('r', hs.reload)
 --
 -- The above three lines initialize Hyper to respond to F18 key-events and binds
@@ -24,74 +24,74 @@ local This = {}
 -- mode on and off. Using F17 as the modal and source of key
 -- events, will result in a very jittery Hyper mode.
 
-This.hyperMode = hs.hotkey.modal.new({}, 'F17')
-
-local hyper_enabled = false
+This.hyperMode = hs.hotkey.modal.new({}, "F17")
 
 -- Enter Hyper Mode when F18 (Hyper) is pressed
 function enterHyperMode()
-    This.hyperMode:enter()
-    hs.alert.show("Entered Hyper", 1)
-    hyper_enabled = true
+	This.hyperMode:enter()
+	hs.alert.show("Entered Hyper", 1)
+	hyper_enabled = true
 end
 
 -- Leave Hyper Mode when F18 (Hyper) is pressed
 function exitHyperMode()
-   This.hyperMode:exit()
-   hs.alert.show("Exited Hyper", 1)
-   hyper_enabled = false
+	This.hyperMode:exit()
+	hs.alert.show("Exited Hyper", 1)
+	hyper_enabled = false
 end
 
 function toggleHyperMode()
-  if not hyper_enabled then
-    This.hyperMode:enter()
-    hs.alert.show("Entered Hyper", 1)
-    hyper_enabled = true
-  else 
-    This.hyperMode:exit()
-    hs.alert.show("Exited Hyper", 1)
-    hyper_enabled = false
-  end
+	if not hyper_enabled then
+		This.hyperMode:enter()
+		hs.alert.show("Entered Hyper", 1)
+		hyper_enabled = true
+	else
+		This.hyperMode:exit()
+		hs.alert.show("Exited Hyper", 1)
+		hyper_enabled = false
+	end
 end
 
 -- Utility to bind handler to Hyper+key
 function This.bindKey(key, handler)
-    This.hyperMode:bind({}, key, handler)
+	This.hyperMode:bind({}, key, handler)
 end
 
 -- Utility to bind handler to Hyper+Shift+key
 function This.bindShiftKey(key, handler)
-   This.hyperMode:bind({'shift'}, key, handler)
+	This.hyperMode:bind({ "shift" }, key, handler)
 end
 
 -- Utility to bind handler to Hyper+Command+Shift+key
 function This.bindCommandShiftKey(key, handler)
-  This.hyperMode:bind({'command', 'shift'}, key, handler)
+	This.hyperMode:bind({ "command", "shift" }, key, handler)
 end
 
 -- Utility to bind handler to Hyper+modifiers+key
 function This.bindKeyWithModifiers(mods, key, handler)
-   This.hyperMode:bind(mods, key, handler)
+	This.hyperMode:bind(mods, key, handler)
 end
 
 -- Binds the enter/exit functions of the Hyper modal to all combinations of modifiers
 function This.install(hotKey)
-  hs.hotkey.bind({}, hotKey, toggleHyperMode)
---  hs.hotkey.bind({"shift"}, hotKey, enterHyperMode, exitHyperMode)
---  hs.hotkey.bind({"ctrl"}, hotKey, enterHyperMode, exitHyperMode)
---  hs.hotkey.bind({"ctrl", "shift"}, hotKey, enterHyperMode, exitHyperMode)
---  hs.hotkey.bind({"cmd"}, hotKey, enterHyperMode, exitHyperMode)
---  hs.hotkey.bind({"cmd", "shift"}, hotKey, enterHyperMode, exitHyperMode)
---  hs.hotkey.bind({"cmd", "ctrl"}, hotKey, enterHyperMode, exitHyperMode)
---  hs.hotkey.bind({"cmd", "ctrl", "shift"}, hotKey, enterHyperMode, exitHyperMode)
---  hs.hotkey.bind({"alt"}, hotKey, enterHyperMode, exitHyperMode)
---  hs.hotkey.bind({"alt", "shift"}, hotKey, enterHyperMode, exitHyperMode)
---  hs.hotkey.bind({"alt", "ctrl"}, hotKey, enterHyperMode, exitHyperMode)
---  hs.hotkey.bind({"alt", "ctrl", "shift"}, hotKey, enterHyperMode, exitHyperMode)
---  hs.hotkey.bind({"alt", "cmd"}, hotKey, enterHyperMode, exitHyperMode)
---  hs.hotkey.bind({"alt", "cmd", "shift"}, hotKey, enterHyperMode, exitHyperMode)
---  hs.hotkey.bind({"alt", "cmd", "ctrl"}, hotKey, enterHyperMode, exitHyperMode)
---  hs.hotkey.bind({"alt", "cmd", "shift", "ctrl"}, hotKey, enterHyperMode, exitHyperMode)
+	hs.hotkey.bind({}, hotKey, toggleHyperMode)
+	--  hs.hotkey.bind({"shift"}, hotKey, enterHyperMode, exitHyperMode)
+	--  hs.hotkey.bind({"ctrl"}, hotKey, enterHyperMode, exitHyperMode)
+	--  hs.hotkey.bind({"ctrl", "shift"}, hotKey, enterHyperMode, exitHyperMode)
+	--  hs.hotkey.bind({"cmd"}, hotKey, enterHyperMode, exitHyperMode)
+	--  hs.hotkey.bind({"cmd", "shift"}, hotKey, enterHyperMode, exitHyperMode)
+	--  hs.hotkey.bind({"cmd", "ctrl"}, hotKey, enterHyperMode, exitHyperMode)
+	--  hs.hotkey.bind({"cmd", "ctrl", "shift"}, hotKey, enterHyperMode, exitHyperMode)
+	--  hs.hotkey.bind({"alt"}, hotKey, enterHyperMode, exitHyperMode)
+	--  hs.hotkey.bind({"alt", "shift"}, hotKey, enterHyperMode, exitHyperMode)
+	--  hs.hotkey.bind({"alt", "ctrl"}, hotKey, enterHyperMode, exitHyperMode)
+	--  hs.hotkey.bind({"alt", "ctrl", "shift"}, hotKey, enterHyperMode, exitHyperMode)
+	--  hs.hotkey.bind({"alt", "cmd"}, hotKey, enterHyperMode, exitHyperMode)
+	--  hs.hotkey.bind({"alt", "cmd", "shift"}, hotKey, enterHyperMode, exitHyperMode)
+	--  hs.hotkey.bind({"alt", "cmd", "ctrl"}, hotKey, enterHyperMode, exitHyperMode)
+	--  hs.hotkey.bind({"alt", "cmd", "shift", "ctrl"}, hotKey, enterHyperMode, exitHyperMode)
 end
+
+toggleHyperMode()
 
 return This
