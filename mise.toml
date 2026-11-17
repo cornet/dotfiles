@@ -2,6 +2,7 @@
 "~/.config/bat" = { source = "bat"}
 "~/.config/git" = { source = "git"}
 "~/.config/nvim" = { source = "nvim"}
+"~/.config/starship.toml" = { source = "starship/starship.toml"}
 "~/.config/zellij" = { source = "zellij"}
 
 ##
