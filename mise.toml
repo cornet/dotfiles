@@ -1,4 +1,5 @@
 [dotfiles]
+"~/.config/bat" = { source = "bat"}
 "~/.config/zellij" = { source = "zellij"}
 
 ##
