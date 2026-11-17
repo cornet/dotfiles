@@ -1,0 +1,10 @@
+[dotfiles]
+"~/.config/zellij" = { source = "zellij"}
+
+##
+# OS X Specific
+[dotfiles."hammerspoon"]
+source = "hammerspoon"
+variants = [
+  { os = "macos", target = "~/.hammerspoon" }
+]
