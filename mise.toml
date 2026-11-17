@@ -1,6 +1,7 @@
 [dotfiles]
 "~/.config/bat" = { source = "bat"}
 "~/.config/git" = { source = "git"}
+"~/.config/nvim" = { source = "nvim"}
 "~/.config/zellij" = { source = "zellij"}
 
 ##
