@@ -8,7 +8,6 @@
 ## zsh
 "~/.zshrc" = { source = "zsh/zshrc"}
 "~/.zsh_plugins.txt" = { source = "zsh/zsh_plugins.txt"}
-"~/.zsh" = { source = "zsh/zsh"}
 "~/.oh-my-zsh-custom" = { source = "zsh/oh-my-zsh-custom"}
 
 ##
