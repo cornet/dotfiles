@@ -12,3 +12,9 @@ source = "hammerspoon"
 variants = [
   { os = "macos", target = "~/.hammerspoon" }
 ]
+
+[dotfiles."yabai"]
+source = "yabai"
+variants = [
+  { os = "macos", target = "~/.config/yabai" }
+]
